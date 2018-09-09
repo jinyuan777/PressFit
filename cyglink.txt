@@ -1,0 +1,1 @@
+"E:\퉥�]업\PressFit\printer.obj"  TO "E:\퉥�]업\PressFit\PRINTS" RS(256) PL(68) PW(78) 

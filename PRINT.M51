@@ -1,0 +1,157 @@
+BL51 BANKED LINKER/LOCATER V6.22              12/03/2011  10:17:16  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
+C:\KEIL\C51\BIN\BL51 PRINTER.OBJ, F.OBJ, USBX_F34X.LIB TO PRINT RS (256) PL (6
+>> 8) PW (78)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  PRINTER.OBJ (PRINTER)
+  F.OBJ (F)
+  C:\KEIL\C51\LIB\C51S.LIB (?C_STARTUP)
+
+
+LINK MAP OF MODULE:  PRINT (PRINTER)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     0002H     UNIT         ?DT?PRINTER
+            DATA    000AH     0001H     UNIT         ?DT?_DELAY?PRINTER
+            IDATA   000BH     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+            CODE    0003H     1E60H     UNIT         ?CO?F
+            CODE    1E63H     0024H     UNIT         ?PR?CUTER?PRINTER
+            CODE    1E87H     0023H     UNIT         ?PR?_DELAY?PRINTER
+            CODE    1EAAH     0019H     UNIT         ?PR?DISABLEALLDRIVER?PRIN
+>> TER
+            CODE    1EC3H     000CH     UNIT         ?C_C51STARTUP
+            CODE    1ECFH     000AH     UNIT         ?PR?MAIN?PRINTER
+
+
+
+OVERLAY MAP OF MODULE:   PRINT (PRINTER)
+
+
+SEGMENT
+  +--> CALLED SEGMENT
+---------------------
+?C_C51STARTUP
+  +--> ?PR?MAIN?PRINTER
+
+
+
+SYMBOL TABLE OF MODULE:  PRINT (PRINTER)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        PRINTER
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0080H         PUBLIC        P0
+  D:0090H         PUBLIC        P1
+  D:00A0H         PUBLIC        P2
+  D:00B0H         PUBLIC        P3
+  D:00C7H         PUBLIC        P4
+  C:1E63H         PUBLIC        Cuter
+  B:0090H.7       PUBLIC        _WR
+  D:00AEH         PUBLIC        P4MDOUT
+  D:00E2H         PUBLIC        XBR1
+  C:1ECFH         PUBLIC        main
+BL51 BANKED LINKER/LOCATER V6.22            12/03/2011  10:17:16  PAGE 2
+
+
+  C:1EAAH         PUBLIC        DisableAllDriver
+  B:0088H.5       PUBLIC        TF0
+  B:00B0H.0       PUBLIC        _A0
+  B:00B0H.1       PUBLIC        _A1
+  B:0090H.5       PUBLIC        _RESET
+  C:1E87H         PUBLIC        _Delay
+  B:0090H.6       PUBLIC        _RD
+  D:0008H         PUBLIC        Eu14PCaa
+  D:0009H         PUBLIC        Eu15PCaa
+  -------         PROC          CUTER
+  C:1E63H         LINE#         8
+  C:1E63H         LINE#         9
+  C:1E66H         LINE#         10
+  C:1E69H         LINE#         11
+  C:1E6BH         LINE#         12
+  C:1E6DH         LINE#         13
+  C:1E6FH         LINE#         14
+  C:1E71H         LINE#         15
+  C:1E73H         LINE#         17
+  C:1E7AH         LINE#         18
+  C:1E7DH         LINE#         19
+  C:1E84H         LINE#         20
+  C:1E86H         LINE#         21
+  -------         ENDPROC       CUTER
+  -------         PROC          DISABLEALLDRIVER
+  C:1EAAH         LINE#         22
+  C:1EAAH         LINE#         23
+  C:1EADH         LINE#         24
+  C:1EB0H         LINE#         25
+  C:1EB2H         LINE#         26
+  C:1EB4H         LINE#         27
+  C:1EB6H         LINE#         28
+  C:1EBAH         LINE#         29
+  C:1EC0H         LINE#         30
+  C:1EC2H         LINE#         31
+  -------         ENDPROC       DISABLEALLDRIVER
+  -------         PROC          MAIN
+  C:1ECFH         LINE#         32
+  C:1ECFH         LINE#         33
+  C:1ECFH         LINE#         34
+  C:1ED2H         LINE#         35
+  C:1ED5H         LINE#         36
+  C:1ED8H         LINE#         39
+  -------         ENDPROC       MAIN
+  -------         PROC          _DELAY
+  D:0006H         SYMBOL        i
+  -------         DO            
+  D:000AH         SYMBOL        d
+  -------         ENDDO         
+  C:1E87H         LINE#         41
+  C:1E87H         LINE#         42
+  C:1E87H         LINE#         43
+  C:1E8EH         LINE#         44
+  C:1E98H         LINE#         45
+  C:1E98H         LINE#         46
+  C:1E9BH         LINE#         47
+  C:1EA2H         LINE#         48
+  C:1EA2H         LINE#         49
+  C:1EA5H         LINE#         50
+  C:1EA7H         LINE#         51
+  C:1EA9H         LINE#         52
+  C:1EA9H         LINE#         53
+  -------         ENDPROC       _DELAY
+  -------         ENDMOD        PRINTER
+
+BL51 BANKED LINKER/LOCATER V6.22            12/03/2011  10:17:16  PAGE 3
+
+
+  -------         MODULE        F
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  C:0003H         PUBLIC        cA11
+  C:0603H         PUBLIC        cA12
+  -------         ENDMOD        F
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?CUTER?PRINTER
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?DISABLEALLDRIVER?PRINTER
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?CO?F
+
+Program Size: data=12.0 xdata=0 code=7897
+LINK/LOCATE RUN COMPLETE.  3 WARNING(S),  0 ERROR(S)

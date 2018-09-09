@@ -1,0 +1,292 @@
+C51 COMPILER V9.51   CPU1X                                                                 07/31/2015 10:02:43 PAGE 1   
+
+
+C51 COMPILER V9.51, COMPILATION OF MODULE CPU1X
+OBJECT MODULE PLACED IN cpu1X.OBJ
+COMPILER INVOKED BY: C:\Keil\C51\BIN\c51.exe cpu1X.h DB OE BR INCDIR(c:\SiLabs\MCU\Inc)
+
+line level    source
+
+   1          #define  IsPowderOnly 1//0:西醫    1:中醫
+   2          #define  IsMainMotorButton 1
+   3          #define  IsCuterOk 1 //0沒剪刀 1有剪刀
+   4          #define  NUM_STG_PAGES  20 // Total number of flash pages to be used for file storage
+   5          #define  MAX_BLOCK_SIZE_READ     64 // Use the maximum read block size of 64 bytes
+   6          
+   7          #define  MAX_BLOCK_SIZE_WRITE    4096   // Use the maximum write block size of 4096 bytes
+   8          #define  FLASH_PAGE_SIZE         512    //  Size of each flash page
+   9          #define  BLOCKS_PR_PAGE  8  // 512/64 = 8
+  10          #define  MAX_NUM_BYTES   FLASH_PAGE_SIZE*NUM_STG_PAGES
+  11          #define  MAX_NUM_BLOCKS  BLOCKS_PR_PAGE*NUM_STG_PAGES
+  12          
+  13          // Message Types
+  14          #define  READ_MSG          0x00  // Message types for communication with host
+  15          #define  CommandACK                0x01
+  16          #define  WRITE_DAT                 0x07
+  17          // Machine States
+  18          #define  ST_WAIT_DEV    0x01  // Wait for application to open a device instance
+  19          #define  ST_IDLE_DEV    0x02  // Device is open, wait for Setup Message from host
+  20          #define  ST_RX_SETUP    0x04  // Received Setup Message, decode and wait for data
+  21          #define  ST_RX_FILE     0x08  // Receive file data from host
+  22          #define  ST_TX_FILE     0x10  // Transmit file data to host
+  23          #define  ST_TX_ACK      0x20  // Transmit ACK 0xFF back to host after every 8 packets
+  24          #define  ST_ERROR       0x80  // Error state
+  25          
+  26          //unsigned char code * data PageIndices[20];
+  27          /*** [BEGIN] USB Descriptor Information [BEGIN] ***/
+  28          code unsigned int USB_VID = 0x10C4;
+  29          code unsigned int USB_PID = 0xEA61;
+  30          
+  31          const char Ini_Location = -2;
+  32          code unsigned char USB_MfrStr[]=
+  33          {
+  34             0x1A,
+  35             0x03,
+  36             'S',0,
+  37             'i',0,
+  38             'l',0,
+  39             'i',0,
+  40             'c',0,
+  41             'o',0,
+  42             'n',0,
+  43             ' ',0,
+  44             'L',0,
+  45             'a',0,
+  46             'b',0,
+  47             's',0
+  48          };
+  49          code unsigned char USB_ProductStr[]=
+  50          {
+  51             0x10,
+  52             0x03,
+  53             'U',0,
+  54             'S',0,
+  55             'B',0,
+C51 COMPILER V9.51   CPU1X                                                                 07/31/2015 10:02:43 PAGE 2   
+
+  56             ' ',0,
+  57             'A',0,
+  58             'P',0,
+  59             'I',0
+  60          };
+  61          code unsigned char USB_SerialStr[]=
+  62          {
+  63             0x0A,
+  64             0x03,
+  65             '1',0,
+  66             '2',0,
+  67             '3',0,
+  68             '4',0
+  69          };
+  70          
+  71          code unsigned char USB_MaxPower=15;
+  72          code unsigned char USB_PwAttributes=0x80;
+  73          code unsigned int USB_bcdDevice= 0x0100;
+  74          code unsigned char LengthFile[3] _at_ 0x2000;
+  75          //-----------------------------------------------------------------------------
+  76          // Function Prototypes
+  77          //-----------------------------------------------------------------------------
+  78          
+  79          void  State_Machine(void);    // Determine new state and act on current state
+  80          void  Receive_Setup(void);    // Receive and decode setup packet from host
+  81          void  Receive_File(void);     // Receive file data from host
+  82          void  Page_Erase(unsigned char*);      // Erase a flash page
+  83          void  Page_Write(unsigned int);      // Write a flash page
+  84          
+  85          
+  86          //============================================
+  87          void PCA0_Init (void);
+  88          void SPI_Init();
+  89          void OSCILLATOR_Init (void);
+  90          void Powder(unsigned char type,unsigned char pwm);
+  91          //void _SET8255(unsigned char MOD);
+  92          //void PrintPack();
+  93          void _u14pc(unsigned char MOD);
+  94          void PresureUp();
+  95          void PresureDown();
+  96          void Delay(unsigned int DTime);
+  97          void i_Delay(unsigned int DTime);
+  98          void TPHControl();
+  99          void FiveStep();
+ 100          void OneStep(unsigned int time);
+ 101          void Timer0_Init(void);
+ 102          void putchar (unsigned char cData);
+ 103          char _getkey ();
+ 104          void UART1_Init (void);
+ 105          void _u14PAR();
+ 106          void PowderLocate();
+ 107          void PowderToRight();
+ 108          void PowderToLeft();
+ 109          void PowderNumber();
+ 110          void PaperMotorForward();
+ 111          void PaperMotorReverse();
+ 112          void PaperMotorLocate();
+ 113          void DisableAllDriver();
+ 114          void Carbon(bit bSW);
+ 115          void AccessCpu0(ECpu0Command Command);
+*** ERROR C141 IN LINE 115 OF cpu1X.h: syntax error near 'Command', expected ')'
+ 116          void RxPackInfo();
+C51 COMPILER V9.51   CPU1X                                                                 07/31/2015 10:02:43 PAGE 3   
+
+ 117          void Cpu1CommandIdel();
+ 118          unsigned char Cpu1Command();
+ 119          void ClosePrinter();
+ 120          void ADC0_Init ();
+ 121          void EightStep();
+ 122          void SpacePack();
+ 123          void Packing();
+ 124          void PackWithoutPrint();
+ 125          void OnePack(unsigned char Type,bit IsPrint,bit IsCut);
+ 126          void CheckPauseState(bit IsPrint);
+ 127          void ShowPackType();
+ 128          void PowderCoverOpen();
+ 129          void CheckErrorCode(EErrorCode ECode);
+*** ERROR C141 IN LINE 129 OF cpu1X.h: syntax error near 'ECode', expected ')'
+ 130          void AutoClear();
+ 131          void PackWithPrint();
+ 132          void HeadWithPrint();
+ 133          void Print(unsigned int Line,signed int Number);
+ 134          void EMIF_Init();
+ 135          void USBPacking();
+ 136          void PackForUSB();
+ 137          void USBPack(bit IsDrug,bit IsPrint);
+ 138          void Shake(unsigned int n);
+ 139          void DrugToRight();
+ 140          void DrugCoverOpen();
+ 141          void DrugLeaveRSW();
+ 142          void ShowPackTypeUSB();
+ 143          void Carbonini();
+ 144          void _One(unsigned char Type,bit IsPrint);
+ 145          void SpacePacking(byte SpaceNumber);
+*** ERROR C141 IN LINE 145 OF cpu1X.h: syntax error near 'SpaceNumber', expected ')'
+ 146          void MainMotorPress();
+ 147          
+ 148          #define PrintTrue       1
+ 149          #define PrintFalse      0
+ 150          #define MotorStop               1
+ 151          #define MotorRight              2
+ 152          #define MotorLeft               3
+ 153          sfr16 SBRL1 = 0xB4;
+ 154          sbit _RESET     = P1 ^5;
+*** ERROR C202 IN LINE 154 OF cpu1X.h: 'P1': undefined identifier
+ 155          
+ 156          sbit _RD                = P1 ^6;
+*** ERROR C202 IN LINE 156 OF cpu1X.h: 'P1': undefined identifier
+ 157          sbit _WR                = P1 ^7;
+*** ERROR C202 IN LINE 157 OF cpu1X.h: 'P1': undefined identifier
+ 158          
+ 159          sbit _A1       =  P3 ^1;
+*** ERROR C202 IN LINE 159 OF cpu1X.h: 'P3': undefined identifier
+ 160          sbit _A0       =  P3 ^0;
+*** ERROR C202 IN LINE 160 OF cpu1X.h: 'P3': undefined identifier
+ 161          sbit _Sel          =  P1 ^4; 
+*** ERROR C202 IN LINE 161 OF cpu1X.h: 'P1': undefined identifier
+ 162          #define PowderPWM       0x40
+ 163          #define TempPWM_MaxPower        0xA0
+ 164          #define TempPWM_Standby         0x70
+ 165          #define TempPWM_Packing         0x80
+ 166          #define TempPWM_OFF                     0x50
+ 167          #define Time_FiveStepDelay              800     
+ 168          //extern xdata unsigned char u14        ;
+ 169          
+ 170          idata signed char PowderLocationCounter;
+C51 COMPILER V9.51   CPU1X                                                                 07/31/2015 10:02:43 PAGE 4   
+
+ 171          idata unsigned char CursorLocation ;
+ 172          idata unsigned char CursorLocationTemp ;                
+ 173          idata unsigned char PowderCounter ;
+ 174          idata unsigned char PowderCounterPS_LastState ;
+ 175          idata unsigned char PowderMotorState ;
+ 176          xdata unsigned char mem[2][520][55]; 
+ 177          //xdata unsigned char men[520][55] 
+ 178          //extern xdata unsigned char u15;
+ 179          
+ 180          unsigned char u14;
+ 181          unsigned char u15;
+ 182          unsigned char u15pc;
+ 183          unsigned char u14pc;
+ 184          unsigned char u14pb;
+ 185          
+ 186          
+ 187          
+ 188          bdata unsigned char u15_PA _at_ 0x21 ;
+ 189          sbit DrugCounterPS      = u15_PA ^0;
+ 190          sbit PowderCounterPS = u15_PA ^1;
+ 191          sbit DrugCoverPS        = u15_PA ^2;
+ 192          sbit PowderCoverPS      = u15_PA ^3;
+ 193          sbit PaperMotorPS       = u15_PA ^4;
+ 194          sbit PresurePS1         = u15_PA ^5;
+ 195          sbit PresurePS2         = u15_PA ^6;
+ 196          sbit NoUse              = u15_PA ^7;
+ 197          
+ 198          bdata unsigned char u14_PA _at_ 0x20 ;
+ 199          sbit RHall              = u14_PA ^1;    // 新版 RHall = u14_PA ^1
+ 200          sbit LHall              = u14_PA ^0;
+ 201          sbit PaperHall  = u14_PA ^2;
+ 202          sbit CarbonHall = u14_PA ^3;
+ 203          sbit U14_5 = u14_PA ^5;
+ 204          sbit U14_6 = u14_PA ^6;
+ 205          sbit U14_7 = u14_PA ^7;
+ 206          
+ 207          bdata unsigned char u15_PB _at_ 0x22 ;
+ 208          sbit FG_Drug            = u15_PB ^0;
+ 209          sbit FG_Powder          = u15_PB ^1;
+ 210          sbit VacuumSW           = u15_PB ^2;
+ 211          sbit PaperEntrySW       = u15_PB ^3;
+ 212          sbit PowderLSW          = u15_PB ^4;
+ 213          sbit PowderRSW          = u15_PB ^5;
+ 214          sbit DrugLSW            = u15_PB ^6;
+ 215          sbit DrugRSW            = u15_PB ^7;
+ 216          
+ 217          bdata unsigned char BitPackParameter;
+ 218          sbit IsPrintPack= BitPackParameter ^0;
+ 219          sbit IsAutoCut = BitPackParameter ^1;
+ 220          sbit IsShake    = BitPackParameter ^2;
+ 221          sbit IsName             = BitPackParameter ^3;
+ 222          sbit IsDateTime = BitPackParameter ^4;
+ 223          sbit IsPatientID= BitPackParameter ^5;
+ 224          
+ 225          #define LeftSW                   0
+ 226          #define CursorLeftEntry  1
+ 227          #define CursorLeftHall   2
+ 228          #define CursorRightHall  3
+ 229          #define CursorRightEntry 4
+ 230          #define RightSW                  5
+ 231          
+ 232          #define Time_USB                                0xF000
+C51 COMPILER V9.51   CPU1X                                                                 07/31/2015 10:02:43 PAGE 5   
+
+ 233          #define CutterPosition                  360//340
+ 234          
+ 235          #define Time_DrugCoverPS                0x8000  // 0x5000
+ 236          #define Time_PowderCoverPS              0x8000  // 0x5000
+ 237          
+ 238          #define Time_DrugCounterPS              0x1000
+ 239          #define Time_PowderCounterPS    0x1000
+ 240          
+ 241          #define Time_PSDelay                    100
+ 242          #define Time_PaperMotorDelay    800     
+ 243          
+ 244          #define Time_DrugRSW                    0xF000  // 0xF000
+ 245          #define Time_DrugLeaveRSW               0x0400  // 0x0400
+ 246          
+ 247          #define Time_DrugCoverPS                0x8000  // 0x5000
+ 248          #define Time_PowderCoverPS              0x8000  // 0x5000
+ 249          
+ 250          #define Time_PowderLSW                  0xF000  // 0xF000
+ 251          #define Time_PowderRSW                  0xF000  // 0xF000
+ 252          
+ 253          #define Time_PaperMotorPS               0x1000  // 0x1000
+ 254          #define Time_PresurePS                  0x5000
+ 255          
+ 256          
+ 257          
+ 258          bit IsRxCommand=0;
+ 259          bit IsPowderMove =0;
+ 260          bit IsDrugMove = 0;
+ 261          bit IsPackPause;
+ 262          bit IsPacking   =0; 
+ 263          sfr16 ADC0     = 0xbd;   
+ 264                         
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  9 ERROR(S)

@@ -1,0 +1,4 @@
+"STARTUP.obj",
+"printer.obj" 
+TO "printer" 
+RAMSIZE(256) 

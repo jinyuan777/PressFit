@@ -1,0 +1,1566 @@
+A51 MACRO ASSEMBLER  COMMUNICATION2                                                       09/08/2018 12:59:15 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.02b
+NO OBJECT MODULE REQUESTED
+ASSEMBLER INVOKED BY: C:\Keil\C51\BIN\A51.EXE Communication2.h XR GEN DB EP NOMOD51 INCDIR(c:\SiLabs\MCU\Inc) 
+
+LOC  OBJ            LINE     SOURCE
+
+                       1     typedef unsigned char byte ;
+*** _________________________^
+*** ERROR #A9 IN 1 (Communication2.h, LINE 1): SYNTAX ERROR
+                       2     typedef unsigned int  word ;
+*** _________________________^
+*** ERROR #A9 IN 2 (Communication2.h, LINE 2): SYNTAX ERROR
+                       3     typedef union
+*** _________________________^
+*** ERROR #A9 IN 3 (Communication2.h, LINE 3): SYNTAX ERROR
+                       4     {
+*** _________________________^
+*** ERROR #A9 IN 4 (Communication2.h, LINE 4): SYNTAX ERROR
+                       5             word W ;
+*** _________________________________^
+*** ERROR #A9 IN 5 (Communication2.h, LINE 5): SYNTAX ERROR
+                       6             byte B[2];
+*** _________________________________^
+*** _______________________________________^
+*** _________________________________________^
+*** ERROR #A9 IN 6 (Communication2.h, LINE 6): SYNTAX ERROR
+*** ERROR #A3 IN 6 (Communication2.h, LINE 6): ILLEGAL CHARACTER
+*** ERROR #A3 IN 6 (Communication2.h, LINE 6): ILLEGAL CHARACTER
+                       7     } TWord;
+*** _________________________^
+*** ERROR #A9 IN 7 (Communication2.h, LINE 7): SYNTAX ERROR
+                       8     
+                       9     typedef enum
+*** _________________________^
+*** ERROR #A9 IN 9 (Communication2.h, LINE 9): SYNTAX ERROR
+                      10     {
+*** _________________________^
+*** ERROR #A9 IN 10 (Communication2.h, LINE 10): SYNTAX ERROR
+                      11             Message_Heating                 =0,
+*** _________________________________^
+*** ERROR #A9 IN 11 (Communication2.h, LINE 11): SYNTAX ERROR
+                      12             Message_PowderLocating  =1,
+*** _________________________________^
+*** ERROR #A9 IN 12 (Communication2.h, LINE 12): SYNTAX ERROR
+                      13             Message_PackPowder              =2,
+*** _________________________________^
+*** ERROR #A9 IN 13 (Communication2.h, LINE 13): SYNTAX ERROR
+                      14             Message_PackDrug                =3,
+*** _________________________________^
+*** ERROR #A9 IN 14 (Communication2.h, LINE 14): SYNTAX ERROR
+                      15             Message_PackMix                 =4,
+*** _________________________________^
+*** ERROR #A9 IN 15 (Communication2.h, LINE 15): SYNTAX ERROR
+                      16             Message_PackSpace               =5,
+*** _________________________________^
+*** ERROR #A9 IN 16 (Communication2.h, LINE 16): SYNTAX ERROR
+                      17             Message_Clearing                =6,
+*** _________________________________^
+*** ERROR #A9 IN 17 (Communication2.h, LINE 17): SYNTAX ERROR
+                      18             Message_PackFinish              =7,
+*** _________________________________^
+*** ERROR #A9 IN 18 (Communication2.h, LINE 18): SYNTAX ERROR
+                      19             Message_PackPause               =8,
+*** _________________________________^
+A51 MACRO ASSEMBLER  COMMUNICATION2                                                       09/08/2018 12:59:15 PAGE     2
+
+*** ERROR #A9 IN 19 (Communication2.h, LINE 19): SYNTAX ERROR
+                      20             Message_PackCancel              =9,
+*** _________________________________^
+*** ERROR #A9 IN 20 (Communication2.h, LINE 20): SYNTAX ERROR
+                      21             Message_SystemReady             =10,
+*** _________________________________^
+*** ERROR #A9 IN 21 (Communication2.h, LINE 21): SYNTAX ERROR
+                      22             Message_Space                   =11,
+*** _________________________________^
+*** ERROR #A9 IN 22 (Communication2.h, LINE 22): SYNTAX ERROR
+                      23     
+                      24             Message_PowderLocationAlerm   =37,
+*** _________________________________^
+*** ERROR #A9 IN 24 (Communication2.h, LINE 24): SYNTAX ERROR
+                      25             Message_PaperEntryAlerm           =38,
+*** _________________________________^
+*** ERROR #A9 IN 25 (Communication2.h, LINE 25): SYNTAX ERROR
+                      26             Message_CarbonEntryAlerm          =39
+*** _________________________________^
+*** ERROR #A9 IN 26 (Communication2.h, LINE 26): SYNTAX ERROR
+                      27     } EMessage ;
+*** _________________________^
+*** ERROR #A9 IN 27 (Communication2.h, LINE 27): SYNTAX ERROR
+                      28     
+                      29     
+                      30     typedef enum
+*** _________________________^
+*** ERROR #A9 IN 30 (Communication2.h, LINE 30): SYNTAX ERROR
+                      31     {
+*** _________________________^
+*** ERROR #A9 IN 31 (Communication2.h, LINE 31): SYNTAX ERROR
+                      32             ErrorCode_NoError               =0,
+*** _________________________________^
+*** ERROR #A9 IN 32 (Communication2.h, LINE 32): SYNTAX ERROR
+                      33             ErrorCode_ControlPanel  =1,
+*** _________________________________^
+*** ERROR #A9 IN 33 (Communication2.h, LINE 33): SYNTAX ERROR
+                      34             ErrorCode_USBConnection =2,
+*** _________________________________^
+*** ERROR #A9 IN 34 (Communication2.h, LINE 34): SYNTAX ERROR
+                      35             ErrorCode_PaperMotor    =3,
+*** _________________________________^
+*** ERROR #A9 IN 35 (Communication2.h, LINE 35): SYNTAX ERROR
+                      36             ErrorCode_Powder                =4,
+*** _________________________________^
+*** ERROR #A9 IN 36 (Communication2.h, LINE 36): SYNTAX ERROR
+                      37             ErrorCode_Drug                  =5,
+*** _________________________________^
+*** ERROR #A9 IN 37 (Communication2.h, LINE 37): SYNTAX ERROR
+                      38             ErrorCode_PowderCover   =6,
+*** _________________________________^
+*** ERROR #A9 IN 38 (Communication2.h, LINE 38): SYNTAX ERROR
+                      39             ErrorCode_DrugCover             =7,
+*** _________________________________^
+*** ERROR #A9 IN 39 (Communication2.h, LINE 39): SYNTAX ERROR
+                      40             ErrorCode_PresureDown   =8,
+*** _________________________________^
+*** ERROR #A9 IN 40 (Communication2.h, LINE 40): SYNTAX ERROR
+                      41             ErrorCode_PresureUp             =9,
+*** _________________________________^
+*** ERROR #A9 IN 41 (Communication2.h, LINE 41): SYNTAX ERROR
+                      42             ErrorCode_Heater                =10,
+*** _________________________________^
+*** ERROR #A9 IN 42 (Communication2.h, LINE 42): SYNTAX ERROR
+                      43             ErrorCode_HallSensor    =11,
+*** _________________________________^
+A51 MACRO ASSEMBLER  COMMUNICATION2                                                       09/08/2018 12:59:15 PAGE     3
+
+*** ERROR #A9 IN 43 (Communication2.h, LINE 43): SYNTAX ERROR
+                      44             ErrorCode_Printer               =12
+*** _________________________________^
+*** ERROR #A9 IN 44 (Communication2.h, LINE 44): SYNTAX ERROR
+                      45     } EErrorCode ;
+*** _________________________^
+*** ERROR #A9 IN 45 (Communication2.h, LINE 45): SYNTAX ERROR
+                      46     
+                      47     
+                      48     typedef enum
+*** _________________________^
+*** ERROR #A9 IN 48 (Communication2.h, LINE 48): SYNTAX ERROR
+                      49     {
+*** _________________________^
+*** ERROR #A9 IN 49 (Communication2.h, LINE 49): SYNTAX ERROR
+                      50             UART_NoMark     =0xEA,
+*** _________________________________^
+*** ERROR #A9 IN 50 (Communication2.h, LINE 50): SYNTAX ERROR
+                      51             UART_Mark       =0xEB,
+*** _________________________________^
+*** ERROR #A9 IN 51 (Communication2.h, LINE 51): SYNTAX ERROR
+                      52     } EUART ;
+*** _________________________^
+*** ERROR #A9 IN 52 (Communication2.h, LINE 52): SYNTAX ERROR
+                      53     
+                      54     
+                      55     
+                      56     typedef enum
+*** _________________________^
+*** ERROR #A9 IN 56 (Communication2.h, LINE 56): SYNTAX ERROR
+                      57     {
+*** _________________________^
+*** ERROR #A9 IN 57 (Communication2.h, LINE 57): SYNTAX ERROR
+                      58             KEY_Idel        =0,
+*** _________________________________^
+*** ERROR #A9 IN 58 (Communication2.h, LINE 58): SYNTAX ERROR
+                      59             KEY_Print       =0x09,
+*** _________________________________^
+*** ERROR #A9 IN 59 (Communication2.h, LINE 59): SYNTAX ERROR
+                      60             KEY_Function=0x0B,
+*** _________________________________^
+*** ERROR #A9 IN 60 (Communication2.h, LINE 60): SYNTAX ERROR
+                      61             KEY_Enter       =0x0D,
+*** _________________________________^
+*** ERROR #A9 IN 61 (Communication2.h, LINE 61): SYNTAX ERROR
+                      62             KEY_PgUp        =0x14,
+*** _________________________________^
+*** ERROR #A9 IN 62 (Communication2.h, LINE 62): SYNTAX ERROR
+                      63             KEY_PgDown  =0x15,
+*** _________________________________^
+*** ERROR #A9 IN 63 (Communication2.h, LINE 63): SYNTAX ERROR
+                      64             KEY_Esc         =0x1B,
+*** _________________________________^
+*** ERROR #A9 IN 64 (Communication2.h, LINE 64): SYNTAX ERROR
+                      65             KEY_Right       =0x1C,
+*** _________________________________^
+*** ERROR #A9 IN 65 (Communication2.h, LINE 65): SYNTAX ERROR
+                      66             KEY_Left        =0x1D,
+*** _________________________________^
+*** ERROR #A9 IN 66 (Communication2.h, LINE 66): SYNTAX ERROR
+                      67             KEY_Up          =0x1E,
+*** _________________________________^
+*** ERROR #A9 IN 67 (Communication2.h, LINE 67): SYNTAX ERROR
+                      68             KEY_Down        =0x1F,
+*** _________________________________^
+*** ERROR #A9 IN 68 (Communication2.h, LINE 68): SYNTAX ERROR
+A51 MACRO ASSEMBLER  COMMUNICATION2                                                       09/08/2018 12:59:15 PAGE     4
+
+                      69             KEY_Del         =0x20,
+*** _________________________________^
+*** ERROR #A9 IN 69 (Communication2.h, LINE 69): SYNTAX ERROR
+                      70             KEY_Stop        =0x23,
+*** _________________________________^
+*** ERROR #A9 IN 70 (Communication2.h, LINE 70): SYNTAX ERROR
+                      71             KEY_Start       =0x2A,
+*** _________________________________^
+*** ERROR #A9 IN 71 (Communication2.h, LINE 71): SYNTAX ERROR
+                      72             KEY_0           =0x30,
+*** _________________________________^
+*** ERROR #A9 IN 72 (Communication2.h, LINE 72): SYNTAX ERROR
+                      73             KEY_1           =0x31,
+*** _________________________________^
+*** ERROR #A9 IN 73 (Communication2.h, LINE 73): SYNTAX ERROR
+                      74             KEY_2           =0x32,
+*** _________________________________^
+*** ERROR #A9 IN 74 (Communication2.h, LINE 74): SYNTAX ERROR
+                      75             KEY_3           =0x33,
+*** _________________________________^
+*** ERROR #A9 IN 75 (Communication2.h, LINE 75): SYNTAX ERROR
+                      76             KEY_4           =0x34,
+*** _________________________________^
+*** ERROR #A9 IN 76 (Communication2.h, LINE 76): SYNTAX ERROR
+                      77             KEY_5           =0x35,
+*** _________________________________^
+*** ERROR #A9 IN 77 (Communication2.h, LINE 77): SYNTAX ERROR
+                      78             KEY_6           =0x36,
+*** _________________________________^
+*** ERROR #A9 IN 78 (Communication2.h, LINE 78): SYNTAX ERROR
+                      79             KEY_7           =0x37,
+*** _________________________________^
+*** ERROR #A9 IN 79 (Communication2.h, LINE 79): SYNTAX ERROR
+                      80             KEY_8           =0x38,
+*** _________________________________^
+*** ERROR #A9 IN 80 (Communication2.h, LINE 80): SYNTAX ERROR
+                      81             KEY_9           =0x39
+*** _________________________________^
+*** ERROR #A9 IN 81 (Communication2.h, LINE 81): SYNTAX ERROR
+                      82     } EKEY ;
+*** _________________________^
+*** ERROR #A9 IN 82 (Communication2.h, LINE 82): SYNTAX ERROR
+                      83     
+                      84     
+                      85     
+                      86     enum
+*** _________________________^
+*** ERROR #A9 IN 86 (Communication2.h, LINE 86): SYNTAX ERROR
+                      87     {
+*** _________________________^
+*** ERROR #A9 IN 87 (Communication2.h, LINE 87): SYNTAX ERROR
+                      88             u14PC_CarbonStop                = 0x00,
+*** _________________________________^
+*** ERROR #A9 IN 88 (Communication2.h, LINE 88): SYNTAX ERROR
+                      89             u14PC_CarbonStart               = 0x01,
+*** _________________________________^
+*** ERROR #A9 IN 89 (Communication2.h, LINE 89): SYNTAX ERROR
+                      90     
+                      91             u14PC_PowderCoverStop   = 0x02,
+*** _________________________________^
+*** ERROR #A9 IN 91 (Communication2.h, LINE 91): SYNTAX ERROR
+                      92             u14PC_PowderCoverStart  = 0x03,
+*** _________________________________^
+*** ERROR #A9 IN 92 (Communication2.h, LINE 92): SYNTAX ERROR
+                      93     
+                      94             u14PC_DrugCoverStop     = 0x04,
+A51 MACRO ASSEMBLER  COMMUNICATION2                                                       09/08/2018 12:59:15 PAGE     5
+
+*** _________________________________^
+*** ERROR #A9 IN 94 (Communication2.h, LINE 94): SYNTAX ERROR
+                      95             u14PC_DrugCoverStart    = 0x05,
+*** _________________________________^
+*** ERROR #A9 IN 95 (Communication2.h, LINE 95): SYNTAX ERROR
+                      96     
+                      97             u14PC_PresureStop               = 0x06,
+*** _________________________________^
+*** ERROR #A9 IN 97 (Communication2.h, LINE 97): SYNTAX ERROR
+                      98             u14PC_PresureStart              = 0x07,
+*** _________________________________^
+*** ERROR #A9 IN 98 (Communication2.h, LINE 98): SYNTAX ERROR
+                      99             u14PC_PowderRight               = 0x08,
+*** _________________________________^
+*** ERROR #A9 IN 99 (Communication2.h, LINE 99): SYNTAX ERROR
+                     100             u14PC_PowderLeft                = 0x09,
+*** _________________________________^
+*** ERROR #A9 IN 100 (Communication2.h, LINE 100): SYNTAX ERROR
+                     101             u14PC_PowderStop                = 0x0A,
+*** _________________________________^
+*** ERROR #A9 IN 101 (Communication2.h, LINE 101): SYNTAX ERROR
+                     102             u14PC_PowderStart               = 0x0B,
+*** _________________________________^
+*** ERROR #A9 IN 102 (Communication2.h, LINE 102): SYNTAX ERROR
+                     103             u14PC_DrugRight                 = 0x0C,
+*** _________________________________^
+*** ERROR #A9 IN 103 (Communication2.h, LINE 103): SYNTAX ERROR
+                     104             u14PC_DrugLeft                  = 0x0D,
+*** _________________________________^
+*** ERROR #A9 IN 104 (Communication2.h, LINE 104): SYNTAX ERROR
+                     105             u14PC_DrugStop                  = 0x0E,
+*** _________________________________^
+*** ERROR #A9 IN 105 (Communication2.h, LINE 105): SYNTAX ERROR
+                     106             u14PC_DrugStart                 = 0x0F
+*** _________________________________^
+*** ERROR #A9 IN 106 (Communication2.h, LINE 106): SYNTAX ERROR
+                     107     
+                     108     } Eu14PCaa ;
+*** _________________________^
+*** ERROR #A9 IN 108 (Communication2.h, LINE 108): SYNTAX ERROR
+                     109     
+                     110     enum u15PC
+*** _________________________^
+*** ERROR #A9 IN 110 (Communication2.h, LINE 110): SYNTAX ERROR
+                     111     {
+*** _________________________^
+*** ERROR #A9 IN 111 (Communication2.h, LINE 111): SYNTAX ERROR
+                     112             u15PC_VacuumHighSpeedON         = 0x00,
+*** _________________________________^
+*** ERROR #A9 IN 112 (Communication2.h, LINE 112): SYNTAX ERROR
+                     113             u15PC_VacuumHighSpeedOFF        = 0x01,
+*** _________________________________^
+*** ERROR #A9 IN 113 (Communication2.h, LINE 113): SYNTAX ERROR
+                     114             u15PC_VacuumLowSpeedON          = 0x02,
+*** _________________________________^
+*** ERROR #A9 IN 114 (Communication2.h, LINE 114): SYNTAX ERROR
+                     115             u15PC_VacuumLowSpeedOFF         = 0x03,
+*** _________________________________^
+*** ERROR #A9 IN 115 (Communication2.h, LINE 115): SYNTAX ERROR
+                     116             u15PC_HeaterControlL            = 0x04,
+*** _________________________________^
+*** ERROR #A9 IN 116 (Communication2.h, LINE 116): SYNTAX ERROR
+                     117             u15PC_HeaterControlH            = 0x05,
+*** _________________________________^
+*** ERROR #A9 IN 117 (Communication2.h, LINE 117): SYNTAX ERROR
+                     118             u15PC_SharkerOFF                        = 0x06,
+A51 MACRO ASSEMBLER  COMMUNICATION2                                                       09/08/2018 12:59:15 PAGE     6
+
+*** _________________________________^
+*** ERROR #A9 IN 118 (Communication2.h, LINE 118): SYNTAX ERROR
+                     119             u15PC_SharkerON                         = 0x07,
+*** _________________________________^
+*** ERROR #A9 IN 119 (Communication2.h, LINE 119): SYNTAX ERROR
+                     120             u15PC_PaperCKL                          = 0x08,
+*** _________________________________^
+*** ERROR #A9 IN 120 (Communication2.h, LINE 120): SYNTAX ERROR
+                     121             u15PC_PaperCKH                          = 0x09,
+*** _________________________________^
+*** ERROR #A9 IN 121 (Communication2.h, LINE 121): SYNTAX ERROR
+                     122             u15PC_PaperCCW                          = 0x0A,
+*** _________________________________^
+*** ERROR #A9 IN 122 (Communication2.h, LINE 122): SYNTAX ERROR
+                     123             u15PC_PaperCW                           = 0x0B,
+*** _________________________________^
+*** ERROR #A9 IN 123 (Communication2.h, LINE 123): SYNTAX ERROR
+                     124             u15PC_PaperResetL                       = 0x0C,
+*** _________________________________^
+*** ERROR #A9 IN 124 (Communication2.h, LINE 124): SYNTAX ERROR
+                     125             u15PC_PaperResetH                       = 0x0D,
+*** _________________________________^
+*** ERROR #A9 IN 125 (Communication2.h, LINE 125): SYNTAX ERROR
+                     126             u15PC_PaperDisable                      = 0x0E,
+*** _________________________________^
+*** ERROR #A9 IN 126 (Communication2.h, LINE 126): SYNTAX ERROR
+                     127             u15PC_PaperEnable                       = 0x0F,
+*** _________________________________^
+*** ERROR #A9 IN 127 (Communication2.h, LINE 127): SYNTAX ERROR
+                     128             u15PC_CarbonON                          = 0x10,
+*** _________________________________^
+*** ERROR #A9 IN 128 (Communication2.h, LINE 128): SYNTAX ERROR
+                     129             u15PC_CarbonOFF                         = 0x11,
+*** _________________________________^
+*** ERROR #A9 IN 129 (Communication2.h, LINE 129): SYNTAX ERROR
+                     130             u15PC_PaperPressON                      = 0x12,
+*** _________________________________^
+*** ERROR #A9 IN 130 (Communication2.h, LINE 130): SYNTAX ERROR
+                     131             u15PC_PaperPressOFF                     = 0x13,
+*** _________________________________^
+*** ERROR #A9 IN 131 (Communication2.h, LINE 131): SYNTAX ERROR
+                     132     
+                     133     } Eu15PCaa ;
+*** _________________________^
+*** ERROR #A9 IN 133 (Communication2.h, LINE 133): SYNTAX ERROR
+                     134     
+                     135     
+                     136     typedef enum 
+*** _________________________^
+*** ERROR #A9 IN 136 (Communication2.h, LINE 136): SYNTAX ERROR
+                     137     { 
+*** _________________________^
+*** ERROR #A9 IN 137 (Communication2.h, LINE 137): SYNTAX ERROR
+                     138         USBTxIndex_Mark,                     
+*** _____________________________^
+*** ERROR #A9 IN 138 (Communication2.h, LINE 138): SYNTAX ERROR
+                     139         USBTxIndex_Command,                  
+*** _____________________________^
+*** ERROR #A9 IN 139 (Communication2.h, LINE 139): SYNTAX ERROR
+                     140             USBTxIndex_Cpu1State,            
+*** _________________________________^
+*** ERROR #A9 IN 140 (Communication2.h, LINE 140): SYNTAX ERROR
+                     141         USBTxIndex_NowNumber,                
+*** _____________________________^
+*** ERROR #A9 IN 141 (Communication2.h, LINE 141): SYNTAX ERROR
+                     142         USBTxIndex_PowderLocation,   
+A51 MACRO ASSEMBLER  COMMUNICATION2                                                       09/08/2018 12:59:15 PAGE     7
+
+*** _____________________________^
+*** ERROR #A9 IN 142 (Communication2.h, LINE 142): SYNTAX ERROR
+                     143         USBTxIndex_Thermometer,              
+*** _____________________________^
+*** ERROR #A9 IN 143 (Communication2.h, LINE 143): SYNTAX ERROR
+                     144             USBTxIndex_ImageNumber,          
+*** _________________________________^
+*** ERROR #A9 IN 144 (Communication2.h, LINE 144): SYNTAX ERROR
+                     145         USBTxIndex_ErrorCode,                
+*** _____________________________^
+*** ERROR #A9 IN 145 (Communication2.h, LINE 145): SYNTAX ERROR
+                     146         USBTxIndex_Counter,                  
+*** _____________________________^
+*** ERROR #A9 IN 146 (Communication2.h, LINE 146): SYNTAX ERROR
+                     147             USBTxIndex_Cpu0State             
+*** _________________________________^
+*** ERROR #A9 IN 147 (Communication2.h, LINE 147): SYNTAX ERROR
+                     148     } EUSBTxIndex ;
+*** _________________________^
+*** ERROR #A9 IN 148 (Communication2.h, LINE 148): SYNTAX ERROR
+                     149     
+                     150     typedef enum 
+*** _________________________^
+*** ERROR #A9 IN 150 (Communication2.h, LINE 150): SYNTAX ERROR
+                     151     { 
+*** _________________________^
+*** ERROR #A9 IN 151 (Communication2.h, LINE 151): SYNTAX ERROR
+                     152             USBRxIndex_Mark                 =0,
+*** _________________________________^
+*** ERROR #A9 IN 152 (Communication2.h, LINE 152): SYNTAX ERROR
+                     153             USBRxIndex_Cpu1Command  =1,
+*** _________________________________^
+*** ERROR #A9 IN 153 (Communication2.h, LINE 153): SYNTAX ERROR
+                     154             USBRxIndex_PackType             =2,
+*** _________________________________^
+*** ERROR #A9 IN 154 (Communication2.h, LINE 154): SYNTAX ERROR
+                     155             USBRxIndex_TotalNumber  =3,
+*** _________________________________^
+*** ERROR #A9 IN 155 (Communication2.h, LINE 155): SYNTAX ERROR
+                     156             USBRxIndex_SpaceNumber  =4,
+*** _________________________________^
+*** ERROR #A9 IN 156 (Communication2.h, LINE 156): SYNTAX ERROR
+                     157             USBRxIndex_IsAutoFill   =5,
+*** _________________________________^
+*** ERROR #A9 IN 157 (Communication2.h, LINE 157): SYNTAX ERROR
+                     158             USBRxIndex_IsShake              =6,
+*** _________________________________^
+*** ERROR #A9 IN 158 (Communication2.h, LINE 158): SYNTAX ERROR
+                     159             USBRxIndex_HAddr                =7,
+*** _________________________________^
+*** ERROR #A9 IN 159 (Communication2.h, LINE 159): SYNTAX ERROR
+                     160             USBRxIndex_LAddr                =8,
+*** _________________________________^
+*** ERROR #A9 IN 160 (Communication2.h, LINE 160): SYNTAX ERROR
+                     161             USBRxIndex_Data                 =9,      
+*** _________________________________^
+*** ERROR #A9 IN 161 (Communication2.h, LINE 161): SYNTAX ERROR
+                     162     
+                     163             USBRxIndex_PackNumber   =15,
+*** _________________________________^
+*** ERROR #A9 IN 163 (Communication2.h, LINE 163): SYNTAX ERROR
+                     164             USBRxIndex_StartNumber  =16,
+*** _________________________________^
+*** ERROR #A9 IN 164 (Communication2.h, LINE 164): SYNTAX ERROR
+                     165     
+                     166             USBRxIndex_Year         =17,
+A51 MACRO ASSEMBLER  COMMUNICATION2                                                       09/08/2018 12:59:15 PAGE     8
+
+*** _________________________________^
+*** ERROR #A9 IN 166 (Communication2.h, LINE 166): SYNTAX ERROR
+                     167             USBRxIndex_Month        =18,
+*** _________________________________^
+*** ERROR #A9 IN 167 (Communication2.h, LINE 167): SYNTAX ERROR
+                     168             USBRxIndex_Day          =19,
+*** _________________________________^
+*** ERROR #A9 IN 168 (Communication2.h, LINE 168): SYNTAX ERROR
+                     169             USBRxIndex_IsPrintDate          =20,
+*** _________________________________^
+*** ERROR #A9 IN 169 (Communication2.h, LINE 169): SYNTAX ERROR
+                     170             USBRxIndex_IsPrintNumber        =21
+*** _________________________________^
+*** ERROR #A9 IN 170 (Communication2.h, LINE 170): SYNTAX ERROR
+                     171     
+                     172     } USBRxIndex ;
+*** _________________________^
+*** ERROR #A9 IN 172 (Communication2.h, LINE 172): SYNTAX ERROR
+                     173     
+                     174     
+                     175     typedef enum
+*** _________________________^
+*** ERROR #A9 IN 175 (Communication2.h, LINE 175): SYNTAX ERROR
+                     176     {
+*** _________________________^
+*** ERROR #A9 IN 176 (Communication2.h, LINE 176): SYNTAX ERROR
+                     177             PackType_Powder,
+*** _________________________________^
+*** ERROR #A9 IN 177 (Communication2.h, LINE 177): SYNTAX ERROR
+                     178             PackType_Drug,
+*** _________________________________^
+*** ERROR #A9 IN 178 (Communication2.h, LINE 178): SYNTAX ERROR
+                     179             PackType_Mix,
+*** _________________________________^
+*** ERROR #A9 IN 179 (Communication2.h, LINE 179): SYNTAX ERROR
+                     180             PackType_Space,
+*** _________________________________^
+*** ERROR #A9 IN 180 (Communication2.h, LINE 180): SYNTAX ERROR
+                     181             PackType_Connection,
+*** _________________________________^
+*** ERROR #A9 IN 181 (Communication2.h, LINE 181): SYNTAX ERROR
+                     182             PackType_Drug0,
+*** _________________________________^
+*** ERROR #A9 IN 182 (Communication2.h, LINE 182): SYNTAX ERROR
+                     183             PackType_Drug1,
+*** _________________________________^
+*** ERROR #A9 IN 183 (Communication2.h, LINE 183): SYNTAX ERROR
+                     184             PackType_Drug2,
+*** _________________________________^
+*** ERROR #A9 IN 184 (Communication2.h, LINE 184): SYNTAX ERROR
+                     185             PackType_Drug3
+*** _________________________________^
+*** ERROR #A9 IN 185 (Communication2.h, LINE 185): SYNTAX ERROR
+                     186     } EPackType;
+*** _________________________^
+*** ERROR #A9 IN 186 (Communication2.h, LINE 186): SYNTAX ERROR
+                     187     
+                     188     
+                     189     typedef enum
+*** _________________________^
+*** ERROR #A9 IN 189 (Communication2.h, LINE 189): SYNTAX ERROR
+                     190     {
+*** _________________________^
+*** ERROR #A9 IN 190 (Communication2.h, LINE 190): SYNTAX ERROR
+                     191             ConnectionMode_0,
+*** _________________________________^
+A51 MACRO ASSEMBLER  COMMUNICATION2                                                       09/08/2018 12:59:15 PAGE     9
+
+*** ERROR #A9 IN 191 (Communication2.h, LINE 191): SYNTAX ERROR
+                     192             ConnectionMode_1,
+*** _________________________________^
+*** ERROR #A9 IN 192 (Communication2.h, LINE 192): SYNTAX ERROR
+                     193             ConnectionMode_2,
+*** _________________________________^
+*** ERROR #A9 IN 193 (Communication2.h, LINE 193): SYNTAX ERROR
+                     194             ConnectionMode_3
+*** _________________________________^
+*** ERROR #A9 IN 194 (Communication2.h, LINE 194): SYNTAX ERROR
+                     195     } EConnectionMode;
+*** _________________________^
+*** ERROR #A9 IN 195 (Communication2.h, LINE 195): SYNTAX ERROR
+                     196     
+                     197     
+                     198     typedef enum                                    
+*** _________________________^
+*** ERROR #A9 IN 198 (Communication2.h, LINE 198): SYNTAX ERROR
+                     199     {
+*** _________________________^
+*** ERROR #A9 IN 199 (Communication2.h, LINE 199): SYNTAX ERROR
+                     200             Cpu0State_Idel,                         
+*** _________________________________^
+*** ERROR #A9 IN 200 (Communication2.h, LINE 200): SYNTAX ERROR
+                     201             Cpu0State_Busy,                                 
+*** _________________________________^
+*** ERROR #A9 IN 201 (Communication2.h, LINE 201): SYNTAX ERROR
+                     202             Cpu0State_SettingMode,                  
+*** _________________________________^
+*** ERROR #A9 IN 202 (Communication2.h, LINE 202): SYNTAX ERROR
+                     203             Cpu0State_PackingMode
+*** _________________________________^
+*** ERROR #A9 IN 203 (Communication2.h, LINE 203): SYNTAX ERROR
+                     204     } ECpu0State;
+*** _________________________^
+*** ERROR #A9 IN 204 (Communication2.h, LINE 204): SYNTAX ERROR
+                     205     
+                     206     
+                     207     
+                     208     typedef enum 
+*** _________________________^
+*** ERROR #A9 IN 208 (Communication2.h, LINE 208): SYNTAX ERROR
+                     209     { 
+*** _________________________^
+*** ERROR #A9 IN 209 (Communication2.h, LINE 209): SYNTAX ERROR
+                     210         Cpu1State_Idel                      =0,
+*** _____________________________^
+*** ERROR #A9 IN 210 (Communication2.h, LINE 210): SYNTAX ERROR
+                     211             Cpu1State_Heating               =1,     
+*** _________________________________^
+*** ERROR #A9 IN 211 (Communication2.h, LINE 211): SYNTAX ERROR
+                     212             Cpu1State_Packing               =2,     
+*** _________________________________^
+*** ERROR #A9 IN 212 (Communication2.h, LINE 212): SYNTAX ERROR
+                     213             Cpu1State_USBPacking    =3,     
+*** _________________________________^
+*** ERROR #A9 IN 213 (Communication2.h, LINE 213): SYNTAX ERROR
+                     214             Cpu1State_PackPause             =4,     
+*** _________________________________^
+*** ERROR #A9 IN 214 (Communication2.h, LINE 214): SYNTAX ERROR
+                     215             Cpu1State_Clearing              =5,     
+*** _________________________________^
+*** ERROR #A9 IN 215 (Communication2.h, LINE 215): SYNTAX ERROR
+                     216             Cpu1State_PowderLocating=6, 
+*** _________________________________^
+*** ERROR #A9 IN 216 (Communication2.h, LINE 216): SYNTAX ERROR
+A51 MACRO ASSEMBLER  COMMUNICATION2                                                       09/08/2018 12:59:15 PAGE    10
+
+                     217         Cpu1State_Busy                      =7,     
+*** _____________________________^
+*** ERROR #A9 IN 217 (Communication2.h, LINE 217): SYNTAX ERROR
+                     218         Cpu1State_Error                     =8,
+*** _____________________________^
+*** ERROR #A9 IN 218 (Communication2.h, LINE 218): SYNTAX ERROR
+                     219             Cpu1State_Waiting               =9
+*** _________________________________^
+*** ERROR #A9 IN 219 (Communication2.h, LINE 219): SYNTAX ERROR
+                     220     } ECpu1State ;
+*** _________________________^
+*** ERROR #A9 IN 220 (Communication2.h, LINE 220): SYNTAX ERROR
+                     221     
+                     222     
+                     223     typedef enum                                    
+*** _________________________^
+*** ERROR #A9 IN 223 (Communication2.h, LINE 223): SYNTAX ERROR
+                     224     {
+*** _________________________^
+*** ERROR #A9 IN 224 (Communication2.h, LINE 224): SYNTAX ERROR
+                     225             Cpu0Command_Idel,                       
+*** _________________________________^
+*** ERROR #A9 IN 225 (Communication2.h, LINE 225): SYNTAX ERROR
+                     226             Cpu0Command_TxPackInfo,         
+*** _________________________________^
+*** ERROR #A9 IN 226 (Communication2.h, LINE 226): SYNTAX ERROR
+                     227     
+                     228             Cpu0Command_ShowInfo,                   
+*** _________________________________^
+*** ERROR #A9 IN 228 (Communication2.h, LINE 228): SYNTAX ERROR
+                     229             Cpu0Command_ShowPackInfo,               
+*** _________________________________^
+*** ERROR #A9 IN 229 (Communication2.h, LINE 229): SYNTAX ERROR
+                     230             Cpu0Command_ShowSystemReady,
+*** _________________________________^
+*** ERROR #A9 IN 230 (Communication2.h, LINE 230): SYNTAX ERROR
+                     231             Cpu0Command_ShowHeating,        
+*** _________________________________^
+*** ERROR #A9 IN 231 (Communication2.h, LINE 231): SYNTAX ERROR
+                     232             Cpu0Command_ShowClearing,       
+*** _________________________________^
+*** ERROR #A9 IN 232 (Communication2.h, LINE 232): SYNTAX ERROR
+                     233             Cpu0Command_ShowPowderLocating,
+*** _________________________________^
+*** ERROR #A9 IN 233 (Communication2.h, LINE 233): SYNTAX ERROR
+                     234             Cpu0Command_ShowPackFinish, 
+*** _________________________________^
+*** ERROR #A9 IN 234 (Communication2.h, LINE 234): SYNTAX ERROR
+                     235             Cpu0Command_ShowPaperEntry,     
+*** _________________________________^
+*** ERROR #A9 IN 235 (Communication2.h, LINE 235): SYNTAX ERROR
+                     236             Cpu0Command_ShowPaperReady,     
+*** _________________________________^
+*** ERROR #A9 IN 236 (Communication2.h, LINE 236): SYNTAX ERROR
+                     237             Cpu0Command_ShowCarbonEntry,
+*** _________________________________^
+*** ERROR #A9 IN 237 (Communication2.h, LINE 237): SYNTAX ERROR
+                     238             Cpu0Command_ShowCarbonNoEntry,
+*** _________________________________^
+*** ERROR #A9 IN 238 (Communication2.h, LINE 238): SYNTAX ERROR
+                     239             Cpu0Command_ShowPackPause,      
+*** _________________________________^
+*** ERROR #A9 IN 239 (Communication2.h, LINE 239): SYNTAX ERROR
+                     240             Cpu0Command_ShowPackContinue,
+*** _________________________________^
+*** ERROR #A9 IN 240 (Communication2.h, LINE 240): SYNTAX ERROR
+A51 MACRO ASSEMBLER  COMMUNICATION2                                                       09/08/2018 12:59:15 PAGE    11
+
+                     241             Cpu0Command_ShowPackStop,       
+*** _________________________________^
+*** ERROR #A9 IN 241 (Communication2.h, LINE 241): SYNTAX ERROR
+                     242             Cpu0Command_ShowLeftDownGroupBox, 
+*** _________________________________^
+*** ERROR #A9 IN 242 (Communication2.h, LINE 242): SYNTAX ERROR
+                     243     
+                     244             Cpu0Command_ShowPackPowder,
+*** _________________________________^
+*** ERROR #A9 IN 244 (Communication2.h, LINE 244): SYNTAX ERROR
+                     245             Cpu0Command_ShowPackDrug,
+*** _________________________________^
+*** ERROR #A9 IN 245 (Communication2.h, LINE 245): SYNTAX ERROR
+                     246             Cpu0Command_ShowPackMix,
+*** _________________________________^
+*** ERROR #A9 IN 246 (Communication2.h, LINE 246): SYNTAX ERROR
+                     247             Cpu0Command_ShowPackSpace,
+*** _________________________________^
+*** ERROR #A9 IN 247 (Communication2.h, LINE 247): SYNTAX ERROR
+                     248     
+                     249             Cpu0Command_ShowCPU1ErrorCode,
+*** _________________________________^
+*** ERROR #A9 IN 249 (Communication2.h, LINE 249): SYNTAX ERROR
+                     250             Cpu0Command_SetDateTime,
+*** _________________________________^
+*** ERROR #A9 IN 250 (Communication2.h, LINE 250): SYNTAX ERROR
+                     251     
+                     252             Cpu0Command_Reset                       
+*** _________________________________^
+*** ERROR #A9 IN 252 (Communication2.h, LINE 252): SYNTAX ERROR
+                     253     } ECpu0Command ;
+*** _________________________^
+*** ERROR #A9 IN 253 (Communication2.h, LINE 253): SYNTAX ERROR
+                     254     
+                     255     
+                     256     typedef enum 
+*** _________________________^
+*** ERROR #A9 IN 256 (Communication2.h, LINE 256): SYNTAX ERROR
+                     257     {
+*** _________________________^
+*** ERROR #A9 IN 257 (Communication2.h, LINE 257): SYNTAX ERROR
+                     258             Cpu1Command_Idel,                       
+*** _________________________________^
+*** ERROR #A9 IN 258 (Communication2.h, LINE 258): SYNTAX ERROR
+                     259             Cpu1Command_RxPackInfo,
+*** _________________________________^
+*** ERROR #A9 IN 259 (Communication2.h, LINE 259): SYNTAX ERROR
+                     260     
+                     261             Cpu1Command_USBPackStart,
+*** _________________________________^
+*** ERROR #A9 IN 261 (Communication2.h, LINE 261): SYNTAX ERROR
+                     262             Cpu1Command_PackStart,  
+*** _________________________________^
+*** ERROR #A9 IN 262 (Communication2.h, LINE 262): SYNTAX ERROR
+                     263             Cpu1Command_PackPause,  
+*** _________________________________^
+*** ERROR #A9 IN 263 (Communication2.h, LINE 263): SYNTAX ERROR
+                     264             Cpu1Command_PackStop,   
+*** _________________________________^
+*** ERROR #A9 IN 264 (Communication2.h, LINE 264): SYNTAX ERROR
+                     265             Cpu1Command_PackContinue,       
+*** _________________________________^
+*** ERROR #A9 IN 265 (Communication2.h, LINE 265): SYNTAX ERROR
+                     266             Cpu1Command_PaperMotorLocate,
+*** _________________________________^
+*** ERROR #A9 IN 266 (Communication2.h, LINE 266): SYNTAX ERROR
+A51 MACRO ASSEMBLER  COMMUNICATION2                                                       09/08/2018 12:59:15 PAGE    12
+
+                     267             Cpu1Command_PaperMotorForward,
+*** _________________________________^
+*** ERROR #A9 IN 267 (Communication2.h, LINE 267): SYNTAX ERROR
+                     268             Cpu1Command_PaperMotorReverse,
+*** _________________________________^
+*** ERROR #A9 IN 268 (Communication2.h, LINE 268): SYNTAX ERROR
+                     269             Cpu1Command_MototPressFit,              
+*** _________________________________^
+*** ERROR #A9 IN 269 (Communication2.h, LINE 269): SYNTAX ERROR
+                     270             Cpu1Command_PowderLocate,       
+*** _________________________________^
+*** ERROR #A9 IN 270 (Communication2.h, LINE 270): SYNTAX ERROR
+                     271             Cpu1Command_StopHeating,        
+*** _________________________________^
+*** ERROR #A9 IN 271 (Communication2.h, LINE 271): SYNTAX ERROR
+                     272             
+                     273             Cpu1Command_MemroyWrite,        
+*** _________________________________^
+*** ERROR #A9 IN 273 (Communication2.h, LINE 273): SYNTAX ERROR
+                     274             Cpu1Command_SetDateTime,
+*** _________________________________^
+*** ERROR #A9 IN 274 (Communication2.h, LINE 274): SYNTAX ERROR
+                     275             Cpu1Command_Reset,                      
+*** _________________________________^
+*** ERROR #A9 IN 275 (Communication2.h, LINE 275): SYNTAX ERROR
+                     276             Cpu1Command_Again,
+*** _________________________________^
+*** ERROR #A9 IN 276 (Communication2.h, LINE 276): SYNTAX ERROR
+                     277             Cpu1Command_Cut,
+*** _________________________________^
+*** ERROR #A9 IN 277 (Communication2.h, LINE 277): SYNTAX ERROR
+                     278             Cpu1Command_PowderLeft
+*** _________________________________^
+*** ERROR #A9 IN 278 (Communication2.h, LINE 278): SYNTAX ERROR
+                     279     } ECpu1Command;
+*** _________________________^
+*** ERROR #A9 IN 279 (Communication2.h, LINE 279): SYNTAX ERROR
+                     280     
+                     281     typedef enum 
+*** _________________________^
+*** ERROR #A9 IN 281 (Communication2.h, LINE 281): SYNTAX ERROR
+                     282     {
+*** _________________________^
+*** ERROR #A9 IN 282 (Communication2.h, LINE 282): SYNTAX ERROR
+                     283             USBCommand_Idel,                        
+*** _________________________________^
+*** ERROR #A9 IN 283 (Communication2.h, LINE 283): SYNTAX ERROR
+                     284             USBCommand_Busy,                        
+*** _________________________________^
+*** ERROR #A9 IN 284 (Communication2.h, LINE 284): SYNTAX ERROR
+                     285             USBCommand_MemroyWrite,         
+*** _________________________________^
+*** ERROR #A9 IN 285 (Communication2.h, LINE 285): SYNTAX ERROR
+                     286             USBCommand_ShowPaperEntry,
+*** _________________________________^
+*** ERROR #A9 IN 286 (Communication2.h, LINE 286): SYNTAX ERROR
+                     287             USBCommand_ShowCarbonEntry,
+*** _________________________________^
+*** ERROR #A9 IN 287 (Communication2.h, LINE 287): SYNTAX ERROR
+                     288             USBCommand_ShowCarbonNoEntry,
+*** _________________________________^
+*** ERROR #A9 IN 288 (Communication2.h, LINE 288): SYNTAX ERROR
+                     289             USBCommand_ShowPackPause,
+*** _________________________________^
+*** ERROR #A9 IN 289 (Communication2.h, LINE 289): SYNTAX ERROR
+                     290             USBCommand_ShowPackContinue,
+A51 MACRO ASSEMBLER  COMMUNICATION2                                                       09/08/2018 12:59:15 PAGE    13
+
+*** _________________________________^
+*** ERROR #A9 IN 290 (Communication2.h, LINE 290): SYNTAX ERROR
+                     291             USBCommand_ShowPackStop,
+*** _________________________________^
+*** ERROR #A9 IN 291 (Communication2.h, LINE 291): SYNTAX ERROR
+                     292             USBCommand_DrugsReady
+*** _________________________________^
+*** ERROR #A9 IN 292 (Communication2.h, LINE 292): SYNTAX ERROR
+                     293     } EUSBCommand;
+*** _________________________^
+*** ERROR #A9 IN 293 (Communication2.h, LINE 293): SYNTAX ERROR
+                     294     
+                     295     typedef enum 
+*** _________________________^
+*** ERROR #A9 IN 295 (Communication2.h, LINE 295): SYNTAX ERROR
+                     296     {
+*** _________________________^
+*** ERROR #A9 IN 296 (Communication2.h, LINE 296): SYNTAX ERROR
+                     297             VacuumType_Stop,
+*** _________________________________^
+*** ERROR #A9 IN 297 (Communication2.h, LINE 297): SYNTAX ERROR
+                     298             VacuumType_HighSpeed,
+*** _________________________________^
+*** ERROR #A9 IN 298 (Communication2.h, LINE 298): SYNTAX ERROR
+                     299             VacuumType_LowSpeed
+*** _________________________________^
+*** ERROR #A9 IN 299 (Communication2.h, LINE 299): SYNTAX ERROR
+                     300     } EVacuumType ;
+*** _________________________^
+*** ERROR #A9 IN 300 (Communication2.h, LINE 300): SYNTAX ERROR
+                     301     
+                     302     typedef enum
+*** _________________________^
+*** ERROR #A9 IN 302 (Communication2.h, LINE 302): SYNTAX ERROR
+                     303     { 
+*** _________________________^
+*** ERROR #A9 IN 303 (Communication2.h, LINE 303): SYNTAX ERROR
+                     304             CommandType_Command, 
+*** _________________________________^
+*** ERROR #A9 IN 304 (Communication2.h, LINE 304): SYNTAX ERROR
+                     305             CommandType_Memory 
+*** _________________________________^
+*** ERROR #A9 IN 305 (Communication2.h, LINE 305): SYNTAX ERROR
+                     306     } ECommandType ;
+*** _________________________^
+*** ERROR #A9 IN 306 (Communication2.h, LINE 306): SYNTAX ERROR
+                     307     
+                     308     
+                     309     
+                     310     typedef enum
+*** _________________________^
+*** ERROR #A9 IN 310 (Communication2.h, LINE 310): SYNTAX ERROR
+                     311     {
+*** _________________________^
+*** ERROR #A9 IN 311 (Communication2.h, LINE 311): SYNTAX ERROR
+                     312             ErrorUnit_PaperMotor            =20,
+*** _________________________________^
+*** ERROR #A9 IN 312 (Communication2.h, LINE 312): SYNTAX ERROR
+                     313             ErrorUnit_CarbonMotor           =21,
+*** _________________________________^
+*** ERROR #A9 IN 313 (Communication2.h, LINE 313): SYNTAX ERROR
+                     314             ErrorUnit_PowderMotor           =22,
+*** _________________________________^
+*** ERROR #A9 IN 314 (Communication2.h, LINE 314): SYNTAX ERROR
+                     315             ErrorUnit_DrugerMotor           =23,
+*** _________________________________^
+A51 MACRO ASSEMBLER  COMMUNICATION2                                                       09/08/2018 12:59:15 PAGE    14
+
+*** ERROR #A9 IN 315 (Communication2.h, LINE 315): SYNTAX ERROR
+                     316             ErrorUnit_VCoverMotor           =24,
+*** _________________________________^
+*** ERROR #A9 IN 316 (Communication2.h, LINE 316): SYNTAX ERROR
+                     317             ErrorUnit_DrugerCoverMotor  =25,
+*** _________________________________^
+*** ERROR #A9 IN 317 (Communication2.h, LINE 317): SYNTAX ERROR
+                     318             ErrorUnit_Printer                       =29,
+*** _________________________________^
+*** ERROR #A9 IN 318 (Communication2.h, LINE 318): SYNTAX ERROR
+                     319             ErrorUnit_Seal                          =30,
+*** _________________________________^
+*** ERROR #A9 IN 319 (Communication2.h, LINE 319): SYNTAX ERROR
+                     320             ErrorUnit_I2C                           =31,
+*** _________________________________^
+*** ERROR #A9 IN 320 (Communication2.h, LINE 320): SYNTAX ERROR
+                     321             ErrorUnit_UART                          =32,
+*** _________________________________^
+*** ERROR #A9 IN 321 (Communication2.h, LINE 321): SYNTAX ERROR
+                     322             ErrorUnit_USB                           =33,
+*** _________________________________^
+*** ERROR #A9 IN 322 (Communication2.h, LINE 322): SYNTAX ERROR
+                     323             ErrorUnit_Paramete                      =34,
+*** _________________________________^
+*** ERROR #A9 IN 323 (Communication2.h, LINE 323): SYNTAX ERROR
+                     324     
+                     325             ErrorUnit_PowderLocation        =37,
+*** _________________________________^
+*** ERROR #A9 IN 325 (Communication2.h, LINE 325): SYNTAX ERROR
+                     326             ErrorUnit_NoPaper                       =38,
+*** _________________________________^
+*** ERROR #A9 IN 326 (Communication2.h, LINE 326): SYNTAX ERROR
+                     327             ErrorUnit_NoCarbon                      =39
+*** _________________________________^
+*** ERROR #A9 IN 327 (Communication2.h, LINE 327): SYNTAX ERROR
+                     328     } EErrorUnit ;
+*** _________________________^
+*** ERROR #A9 IN 328 (Communication2.h, LINE 328): SYNTAX ERROR
+                     329     
+                     330     typedef enum
+*** _________________________^
+*** ERROR #A9 IN 330 (Communication2.h, LINE 330): SYNTAX ERROR
+                     331     {
+*** _________________________^
+*** ERROR #A9 IN 331 (Communication2.h, LINE 331): SYNTAX ERROR
+                     332             ErrorType_MotorAlarm   =12,
+*** _________________________________^
+*** ERROR #A9 IN 332 (Communication2.h, LINE 332): SYNTAX ERROR
+                     333             ErrorType_PSAlarm          =13,
+*** _________________________________^
+*** ERROR #A9 IN 333 (Communication2.h, LINE 333): SYNTAX ERROR
+                     334             ErrorType_RSWAlarm         =14,
+*** _________________________________^
+*** ERROR #A9 IN 334 (Communication2.h, LINE 334): SYNTAX ERROR
+                     335             ErrorType_LSWAlarm         =15,
+*** _________________________________^
+*** ERROR #A9 IN 335 (Communication2.h, LINE 335): SYNTAX ERROR
+                     336             ErrorType_HallSensor   =16,
+*** _________________________________^
+*** ERROR #A9 IN 336 (Communication2.h, LINE 336): SYNTAX ERROR
+                     337             ErrorType_Alarm            =17,
+*** _________________________________^
+*** ERROR #A9 IN 337 (Communication2.h, LINE 337): SYNTAX ERROR
+                     338             ErrorType_Error            =18,
+*** _________________________________^
+*** ERROR #A9 IN 338 (Communication2.h, LINE 338): SYNTAX ERROR
+A51 MACRO ASSEMBLER  COMMUNICATION2                                                       09/08/2018 12:59:15 PAGE    15
+
+                     339             ErrorType_Warning          =19
+*** _________________________________^
+*** ERROR #A9 IN 339 (Communication2.h, LINE 339): SYNTAX ERROR
+                     340     } EErrorType ;
+*** _________________________^
+*** ERROR #A9 IN 340 (Communication2.h, LINE 340): SYNTAX ERROR
+                     341     
+                     342     
+                     343     typedef struct 
+*** _________________________^
+*** ERROR #A9 IN 343 (Communication2.h, LINE 343): SYNTAX ERROR
+                     344     {
+*** _________________________^
+*** ERROR #A9 IN 344 (Communication2.h, LINE 344): SYNTAX ERROR
+                     345             byte Year;
+*** _________________________________^
+*** ERROR #A9 IN 345 (Communication2.h, LINE 345): SYNTAX ERROR
+                     346             byte Day;
+*** _________________________________^
+*** ERROR #A9 IN 346 (Communication2.h, LINE 346): SYNTAX ERROR
+                     347             byte Month;
+*** _________________________________^
+*** ERROR #A9 IN 347 (Communication2.h, LINE 347): SYNTAX ERROR
+                     348             byte Date;
+*** _________________________________^
+*** ERROR #A9 IN 348 (Communication2.h, LINE 348): SYNTAX ERROR
+                     349             byte Hour;
+*** _________________________________^
+*** ERROR #A9 IN 349 (Communication2.h, LINE 349): SYNTAX ERROR
+                     350             byte Minute;
+*** _________________________________^
+*** ERROR #A9 IN 350 (Communication2.h, LINE 350): SYNTAX ERROR
+                     351             byte Sec;       
+*** _________________________________^
+*** ERROR #A9 IN 351 (Communication2.h, LINE 351): SYNTAX ERROR
+                     352     } TDatetime;
+*** _________________________^
+*** ERROR #A9 IN 352 (Communication2.h, LINE 352): SYNTAX ERROR
+                     353     
+                     354     typedef struct 
+*** _________________________^
+*** ERROR #A9 IN 354 (Communication2.h, LINE 354): SYNTAX ERROR
+                     355     {
+*** _________________________^
+*** ERROR #A9 IN 355 (Communication2.h, LINE 355): SYNTAX ERROR
+                     356             ECpu0Command Command;                   
+*** _________________________________^
+*** ERROR #A9 IN 356 (Communication2.h, LINE 356): SYNTAX ERROR
+                     357             ECpu0State       State;                         
+*** _________________________________^
+*** ERROR #A9 IN 357 (Communication2.h, LINE 357): SYNTAX ERROR
+                     358             EPackType        PackType;                      
+*** _________________________________^
+*** ERROR #A9 IN 358 (Communication2.h, LINE 358): SYNTAX ERROR
+                     359             byte             SpaceNumber;           
+*** _________________________________^
+*** ERROR #A9 IN 359 (Communication2.h, LINE 359): SYNTAX ERROR
+                     360             byte             TotalNumber;           
+*** _________________________________^
+*** ERROR #A9 IN 360 (Communication2.h, LINE 360): SYNTAX ERROR
+                     361             byte             PrintTotalNumber;  
+*** _________________________________^
+*** ERROR #A9 IN 361 (Communication2.h, LINE 361): SYNTAX ERROR
+                     362             byte             BitPackParameter;      
+*** _________________________________^
+*** ERROR #A9 IN 362 (Communication2.h, LINE 362): SYNTAX ERROR
+A51 MACRO ASSEMBLER  COMMUNICATION2                                                       09/08/2018 12:59:15 PAGE    16
+
+                     363             byte             PrintItem[4];          
+*** _________________________________^
+*** ___________________________________________________________^
+*** _____________________________________________________________^
+*** ERROR #A9 IN 363 (Communication2.h, LINE 363): SYNTAX ERROR
+*** ERROR #A3 IN 363 (Communication2.h, LINE 363): ILLEGAL CHARACTER
+*** ERROR #A3 IN 363 (Communication2.h, LINE 363): ILLEGAL CHARACTER
+                     364             byte             PrintItemNumber[4];
+*** _________________________________^
+*** _________________________________________________________________^
+*** ___________________________________________________________________^
+*** ERROR #A9 IN 364 (Communication2.h, LINE 364): SYNTAX ERROR
+*** ERROR #A3 IN 364 (Communication2.h, LINE 364): ILLEGAL CHARACTER
+*** ERROR #A3 IN 364 (Communication2.h, LINE 364): ILLEGAL CHARACTER
+                     365             byte             ID[8];                         
+*** _________________________________^
+*** ____________________________________________________^
+*** ______________________________________________________^
+*** ERROR #A9 IN 365 (Communication2.h, LINE 365): SYNTAX ERROR
+*** ERROR #A3 IN 365 (Communication2.h, LINE 365): ILLEGAL CHARACTER
+*** ERROR #A3 IN 365 (Communication2.h, LINE 365): ILLEGAL CHARACTER
+                     366             TDatetime        DateTime ;                     
+*** _________________________________^
+*** ERROR #A9 IN 366 (Communication2.h, LINE 366): SYNTAX ERROR
+                     367     } TCpu0 ;
+*** _________________________^
+*** ERROR #A9 IN 367 (Communication2.h, LINE 367): SYNTAX ERROR
+                     368     
+                     369     typedef struct
+*** _________________________^
+*** ERROR #A9 IN 369 (Communication2.h, LINE 369): SYNTAX ERROR
+                     370     {
+*** _________________________^
+*** ERROR #A9 IN 370 (Communication2.h, LINE 370): SYNTAX ERROR
+                     371             ECpu1Command    Command_UART;           
+*** _________________________________^
+*** ERROR #A9 IN 371 (Communication2.h, LINE 371): SYNTAX ERROR
+                     372             ECpu1Command    Command_USB;
+*** _________________________________^
+*** ERROR #A9 IN 372 (Communication2.h, LINE 372): SYNTAX ERROR
+                     373             ECpu1State              State;  
+*** _________________________________^
+*** ERROR #A9 IN 373 (Communication2.h, LINE 373): SYNTAX ERROR
+                     374     
+                     375             byte    NowNumber       ;       
+*** _________________________________^
+*** ERROR #A9 IN 375 (Communication2.h, LINE 375): SYNTAX ERROR
+                     376             byte    PowderLocation; 
+*** _________________________________^
+*** ERROR #A9 IN 376 (Communication2.h, LINE 376): SYNTAX ERROR
+                     377             byte    Thermometer     ;       
+*** _________________________________^
+*** ERROR #A9 IN 377 (Communication2.h, LINE 377): SYNTAX ERROR
+                     378             byte    ImageNumber ;   
+*** _________________________________^
+*** ERROR #A9 IN 378 (Communication2.h, LINE 378): SYNTAX ERROR
+                     379     
+                     380             TWord   PowderStartPosition;
+*** _________________________________^
+*** ERROR #A9 IN 380 (Communication2.h, LINE 380): SYNTAX ERROR
+                     381             TWord   DrugStartPosition;      
+*** _________________________________^
+*** ERROR #A9 IN 381 (Communication2.h, LINE 381): SYNTAX ERROR
+                     382             TWord   InitTempTime;           
+*** _________________________________^
+*** ERROR #A9 IN 382 (Communication2.h, LINE 382): SYNTAX ERROR
+A51 MACRO ASSEMBLER  COMMUNICATION2                                                       09/08/2018 12:59:15 PAGE    17
+
+                     383             TWord   ShakeArray[6];          
+*** _________________________________^
+*** ___________________________________________________^
+*** _____________________________________________________^
+*** ERROR #A9 IN 383 (Communication2.h, LINE 383): SYNTAX ERROR
+*** ERROR #A3 IN 383 (Communication2.h, LINE 383): ILLEGAL CHARACTER
+*** ERROR #A3 IN 383 (Communication2.h, LINE 383): ILLEGAL CHARACTER
+                     384     
+                     385             EVacuumType     VacuumType ;    
+*** _________________________________^
+*** ERROR #A9 IN 385 (Communication2.h, LINE 385): SYNTAX ERROR
+                     386     
+                     387             TWord   ForwardNumber;          
+*** _________________________________^
+*** ERROR #A9 IN 387 (Communication2.h, LINE 387): SYNTAX ERROR
+                     388             TWord   ReverseNumber;          
+*** _________________________________^
+*** ERROR #A9 IN 388 (Communication2.h, LINE 388): SYNTAX ERROR
+                     389             byte    PowderCoverOpenNumber;
+*** _________________________________^
+*** ERROR #A9 IN 389 (Communication2.h, LINE 389): SYNTAX ERROR
+                     390             byte    DrugCoverOpenNumber;
+*** _________________________________^
+*** ERROR #A9 IN 390 (Communication2.h, LINE 390): SYNTAX ERROR
+                     391             byte    HeaterPWM ;                     
+*** _________________________________^
+*** ERROR #A9 IN 391 (Communication2.h, LINE 391): SYNTAX ERROR
+                     392             
+                     393             EMessage                Message;                
+*** _________________________________^
+*** ERROR #A9 IN 393 (Communication2.h, LINE 393): SYNTAX ERROR
+                     394     } TCpu1;
+*** _________________________^
+*** ERROR #A9 IN 394 (Communication2.h, LINE 394): SYNTAX ERROR
+                     395     
+                     396     typedef struct 
+*** _________________________^
+*** ERROR #A9 IN 396 (Communication2.h, LINE 396): SYNTAX ERROR
+                     397     {
+*** _________________________^
+*** ERROR #A9 IN 397 (Communication2.h, LINE 397): SYNTAX ERROR
+                     398             EUSBCommand     Command;                
+*** _________________________________^
+*** ERROR #A9 IN 398 (Communication2.h, LINE 398): SYNTAX ERROR
+                     399             EPackType       PackType;               
+*** _________________________________^
+*** ERROR #A9 IN 399 (Communication2.h, LINE 399): SYNTAX ERROR
+                     400             byte            SpaceNumber;    
+*** _________________________________^
+*** ERROR #A9 IN 400 (Communication2.h, LINE 400): SYNTAX ERROR
+                     401             byte            PackNumber;             
+*** _________________________________^
+*** ERROR #A9 IN 401 (Communication2.h, LINE 401): SYNTAX ERROR
+                     402             byte            StartNumber;    
+*** _________________________________^
+*** ERROR #A9 IN 402 (Communication2.h, LINE 402): SYNTAX ERROR
+                     403             byte            TotalNumber;    
+*** _________________________________^
+*** ERROR #A9 IN 403 (Communication2.h, LINE 403): SYNTAX ERROR
+                     404         byte                PgMode;         
+*** _____________________________^
+*** ERROR #A9 IN 404 (Communication2.h, LINE 404): SYNTAX ERROR
+                     405             byte            IsShake;                
+*** _________________________________^
+*** ERROR #A9 IN 405 (Communication2.h, LINE 405): SYNTAX ERROR
+                     406     
+A51 MACRO ASSEMBLER  COMMUNICATION2                                                       09/08/2018 12:59:15 PAGE    18
+
+                     407             byte            Year;                   
+*** _________________________________^
+*** ERROR #A9 IN 407 (Communication2.h, LINE 407): SYNTAX ERROR
+                     408             byte            Month;                  
+*** _________________________________^
+*** ERROR #A9 IN 408 (Communication2.h, LINE 408): SYNTAX ERROR
+                     409             byte            Day;                    
+*** _________________________________^
+*** ERROR #A9 IN 409 (Communication2.h, LINE 409): SYNTAX ERROR
+                     410             byte        IsAutoCut;  
+*** _________________________________^
+*** ERROR #A9 IN 410 (Communication2.h, LINE 410): SYNTAX ERROR
+                     411             byte        IsPrintNumber;      
+*** _________________________________^
+*** ERROR #A9 IN 411 (Communication2.h, LINE 411): SYNTAX ERROR
+                     412     } TUSB ;
+*** _________________________^
+*** ERROR #A9 IN 412 (Communication2.h, LINE 412): SYNTAX ERROR
+                     413     typedef struct
+*** _________________________^
+*** ERROR #A9 IN 413 (Communication2.h, LINE 413): SYNTAX ERROR
+                     414     {
+*** _________________________^
+*** ERROR #A9 IN 414 (Communication2.h, LINE 414): SYNTAX ERROR
+                     415             word            Left;
+*** _________________________________^
+*** ERROR #A9 IN 415 (Communication2.h, LINE 415): SYNTAX ERROR
+                     416             word            Right;
+*** _________________________________^
+*** ERROR #A9 IN 416 (Communication2.h, LINE 416): SYNTAX ERROR
+                     417             word            Length;
+*** _________________________________^
+*** ERROR #A9 IN 417 (Communication2.h, LINE 417): SYNTAX ERROR
+                     418             byte            SpacePg;
+*** _________________________________^
+*** ERROR #A9 IN 418 (Communication2.h, LINE 418): SYNTAX ERROR
+                     419     } TSize;
+*** _________________________^
+*** ERROR #A9 IN 419 (Communication2.h, LINE 419): SYNTAX ERROR
+                     420     typedef struct
+*** _________________________^
+*** ERROR #A9 IN 420 (Communication2.h, LINE 420): SYNTAX ERROR
+                     421     {
+*** _________________________^
+*** ERROR #A9 IN 421 (Communication2.h, LINE 421): SYNTAX ERROR
+                     422             EUART           UART_Mark;      
+*** _________________________________^
+*** ERROR #A9 IN 422 (Communication2.h, LINE 422): SYNTAX ERROR
+                     423             TCpu0           Cpu0;           
+*** _________________________________^
+*** ERROR #A9 IN 423 (Communication2.h, LINE 423): SYNTAX ERROR
+                     424             TCpu1           Cpu1;                           
+*** _________________________________^
+*** ERROR #A9 IN 424 (Communication2.h, LINE 424): SYNTAX ERROR
+                     425             EErrorCode  ErrorCode;  
+*** _________________________________^
+*** ERROR #A9 IN 425 (Communication2.h, LINE 425): SYNTAX ERROR
+                     426             TSize           PgMode[3];
+*** _________________________________^
+*** _______________________________________________________^
+*** _________________________________________________________^
+*** ERROR #A9 IN 426 (Communication2.h, LINE 426): SYNTAX ERROR
+*** ERROR #A3 IN 426 (Communication2.h, LINE 426): ILLEGAL CHARACTER
+*** ERROR #A3 IN 426 (Communication2.h, LINE 426): ILLEGAL CHARACTER
+                     427     } TPacker;
+*** _________________________^
+A51 MACRO ASSEMBLER  COMMUNICATION2                                                       09/08/2018 12:59:15 PAGE    19
+
+*** ERROR #A9 IN 427 (Communication2.h, LINE 427): SYNTAX ERROR
+                     428     
+                     429     
+*** WARNING #A41 IN 429 (Communication2.h, LINE 429): MISSING 'END' STATEMENT
+A51 MACRO ASSEMBLER  COMMUNICATION2                                                       09/08/2018 12:59:15 PAGE    20
+
+XREF SYMBOL TABLE LISTING
+---- ------ ----- -------
+
+
+N A M E                           T Y P E  V A L U E   ATTRIBUTES / REFERENCES
+
+B. . . . . . . . . . . . . . . .    ----   -----          6
+BITPACKPARAMETER . . . . . . . .    ----   -----          362
+BYTE . . . . . . . . . . . . . .    ----   -----          1 6 345 346 347 348 349 350 351 359 360 361 362 363 364 365
+                                                         375 376 377 378 389 390 391 400 401 402 403 404 405 407 408
+                                                         409 410 411 418
+CHAR . . . . . . . . . . . . . .    ----   -----          1
+COMMAND. . . . . . . . . . . . .    ----   -----          356 398
+COMMANDTYPE_COMMAND. . . . . . .    ----   -----          304
+COMMANDTYPE_MEMORY . . . . . . .    ----   -----          305
+COMMAND_UART . . . . . . . . . .    ----   -----          371
+COMMAND_USB. . . . . . . . . . .    ----   -----          372
+CONNECTIONMODE_0 . . . . . . . .    ----   -----          191
+CONNECTIONMODE_1 . . . . . . . .    ----   -----          192
+CONNECTIONMODE_2 . . . . . . . .    ----   -----          193
+CONNECTIONMODE_3 . . . . . . . .    ----   -----          194
+CPU0 . . . . . . . . . . . . . .    ----   -----          423
+CPU0COMMAND_IDEL . . . . . . . .    ----   -----          225
+CPU0COMMAND_RESET. . . . . . . .    ----   -----          252
+CPU0COMMAND_SETDATETIME. . . . .    ----   -----          250
+CPU0COMMAND_SHOWCARBONENTRY. . .    ----   -----          237
+CPU0COMMAND_SHOWCARBONNOENTRY. .    ----   -----          238
+CPU0COMMAND_SHOWCLEARING . . . .    ----   -----          232
+CPU0COMMAND_SHOWCPU1ERRORCODE. .    ----   -----          249
+CPU0COMMAND_SHOWHEATING. . . . .    ----   -----          231
+CPU0COMMAND_SHOWINFO . . . . . .    ----   -----          228
+CPU0COMMAND_SHOWLEFTDOWNGROUPBOX    ----   -----          242
+CPU0COMMAND_SHOWPACKCONTINUE . .    ----   -----          240
+CPU0COMMAND_SHOWPACKDRUG . . . .    ----   -----          245
+CPU0COMMAND_SHOWPACKFINISH . . .    ----   -----          234
+CPU0COMMAND_SHOWPACKINFO . . . .    ----   -----          229
+CPU0COMMAND_SHOWPACKMIX. . . . .    ----   -----          246
+CPU0COMMAND_SHOWPACKPAUSE. . . .    ----   -----          239
+CPU0COMMAND_SHOWPACKPOWDER . . .    ----   -----          244
+CPU0COMMAND_SHOWPACKSPACE. . . .    ----   -----          247
+CPU0COMMAND_SHOWPACKSTOP . . . .    ----   -----          241
+CPU0COMMAND_SHOWPAPERENTRY . . .    ----   -----          235
+CPU0COMMAND_SHOWPAPERREADY . . .    ----   -----          236
+CPU0COMMAND_SHOWPOWDERLOCATING .    ----   -----          233
+CPU0COMMAND_SHOWSYSTEMREADY. . .    ----   -----          230
+CPU0COMMAND_TXPACKINFO . . . . .    ----   -----          226
+CPU0STATE_BUSY . . . . . . . . .    ----   -----          201
+CPU0STATE_IDEL . . . . . . . . .    ----   -----          200
+CPU0STATE_PACKINGMODE. . . . . .    ----   -----          203
+CPU0STATE_SETTINGMODE. . . . . .    ----   -----          202
+CPU1 . . . . . . . . . . . . . .    ----   -----          424
+CPU1COMMAND_AGAIN. . . . . . . .    ----   -----          276
+CPU1COMMAND_CUT. . . . . . . . .    ----   -----          277
+CPU1COMMAND_IDEL . . . . . . . .    ----   -----          258
+CPU1COMMAND_MEMROYWRITE. . . . .    ----   -----          273
+CPU1COMMAND_MOTOTPRESSFIT. . . .    ----   -----          269
+CPU1COMMAND_PACKCONTINUE . . . .    ----   -----          265
+CPU1COMMAND_PACKPAUSE. . . . . .    ----   -----          263
+CPU1COMMAND_PACKSTART. . . . . .    ----   -----          262
+CPU1COMMAND_PACKSTOP . . . . . .    ----   -----          264
+CPU1COMMAND_PAPERMOTORFORWARD. .    ----   -----          267
+CPU1COMMAND_PAPERMOTORLOCATE . .    ----   -----          266
+CPU1COMMAND_PAPERMOTORREVERSE. .    ----   -----          268
+CPU1COMMAND_POWDERLEFT . . . . .    ----   -----          278
+CPU1COMMAND_POWDERLOCATE . . . .    ----   -----          270
+CPU1COMMAND_RESET. . . . . . . .    ----   -----          275
+A51 MACRO ASSEMBLER  COMMUNICATION2                                                       09/08/2018 12:59:15 PAGE    21
+
+CPU1COMMAND_RXPACKINFO . . . . .    ----   -----          259
+CPU1COMMAND_SETDATETIME. . . . .    ----   -----          274
+CPU1COMMAND_STOPHEATING. . . . .    ----   -----          271
+CPU1COMMAND_USBPACKSTART . . . .    ----   -----          261
+CPU1STATE_BUSY . . . . . . . . .    ----   -----          217
+CPU1STATE_CLEARING . . . . . . .    ----   -----          215
+CPU1STATE_ERROR. . . . . . . . .    ----   -----          218
+CPU1STATE_HEATING. . . . . . . .    ----   -----          211
+CPU1STATE_IDEL . . . . . . . . .    ----   -----          210
+CPU1STATE_PACKING. . . . . . . .    ----   -----          212
+CPU1STATE_PACKPAUSE. . . . . . .    ----   -----          214
+CPU1STATE_POWDERLOCATING . . . .    ----   -----          216
+CPU1STATE_USBPACKING . . . . . .    ----   -----          213
+CPU1STATE_WAITING. . . . . . . .    ----   -----          219
+DATE . . . . . . . . . . . . . .    ----   -----          348
+DATETIME . . . . . . . . . . . .    ----   -----          366
+DAY. . . . . . . . . . . . . . .    ----   -----          346 409
+DRUGCOVEROPENNUMBER. . . . . . .    ----   -----          390
+DRUGSTARTPOSITION. . . . . . . .    ----   -----          381
+ECOMMANDTYPE . . . . . . . . . .    ----   -----          306
+ECONNECTIONMODE. . . . . . . . .    ----   -----          195
+ECPU0COMMAND . . . . . . . . . .    ----   -----          253 356
+ECPU0STATE . . . . . . . . . . .    ----   -----          204 357
+ECPU1COMMAND . . . . . . . . . .    ----   -----          279 371 372
+ECPU1STATE . . . . . . . . . . .    ----   -----          220 373
+EERRORCODE . . . . . . . . . . .    ----   -----          45 425
+EERRORTYPE . . . . . . . . . . .    ----   -----          340
+EERRORUNIT . . . . . . . . . . .    ----   -----          328
+EKEY . . . . . . . . . . . . . .    ----   -----          82
+EMESSAGE . . . . . . . . . . . .    ----   -----          27 393
+ENUM . . . . . . . . . . . . . .    ----   -----          9 30 48 56 86 110 136 150 175 189 198 208 223 256 281 295
+                                                         302 310 330
+EPACKTYPE. . . . . . . . . . . .    ----   -----          186 358 399
+ERRORCODE. . . . . . . . . . . .    ----   -----          425
+ERRORCODE_CONTROLPANEL . . . . .    ----   -----          33
+ERRORCODE_DRUG . . . . . . . . .    ----   -----          37
+ERRORCODE_DRUGCOVER. . . . . . .    ----   -----          39
+ERRORCODE_HALLSENSOR . . . . . .    ----   -----          43
+ERRORCODE_HEATER . . . . . . . .    ----   -----          42
+ERRORCODE_NOERROR. . . . . . . .    ----   -----          32
+ERRORCODE_PAPERMOTOR . . . . . .    ----   -----          35
+ERRORCODE_POWDER . . . . . . . .    ----   -----          36
+ERRORCODE_POWDERCOVER. . . . . .    ----   -----          38
+ERRORCODE_PRESUREDOWN. . . . . .    ----   -----          40
+ERRORCODE_PRESUREUP. . . . . . .    ----   -----          41
+ERRORCODE_PRINTER. . . . . . . .    ----   -----          44
+ERRORCODE_USBCONNECTION. . . . .    ----   -----          34
+ERRORTYPE_ALARM. . . . . . . . .    ----   -----          337
+ERRORTYPE_ERROR. . . . . . . . .    ----   -----          338
+ERRORTYPE_HALLSENSOR . . . . . .    ----   -----          336
+ERRORTYPE_LSWALARM . . . . . . .    ----   -----          335
+ERRORTYPE_MOTORALARM . . . . . .    ----   -----          332
+ERRORTYPE_PSALARM. . . . . . . .    ----   -----          333
+ERRORTYPE_RSWALARM . . . . . . .    ----   -----          334
+ERRORTYPE_WARNING. . . . . . . .    ----   -----          339
+ERRORUNIT_CARBONMOTOR. . . . . .    ----   -----          313
+ERRORUNIT_DRUGERCOVERMOTOR . . .    ----   -----          317
+ERRORUNIT_DRUGERMOTOR. . . . . .    ----   -----          315
+ERRORUNIT_I2C. . . . . . . . . .    ----   -----          320
+ERRORUNIT_NOCARBON . . . . . . .    ----   -----          327
+ERRORUNIT_NOPAPER. . . . . . . .    ----   -----          326
+ERRORUNIT_PAPERMOTOR . . . . . .    ----   -----          312
+ERRORUNIT_PARAMETE . . . . . . .    ----   -----          323
+ERRORUNIT_POWDERLOCATION . . . .    ----   -----          325
+ERRORUNIT_POWDERMOTOR. . . . . .    ----   -----          314
+ERRORUNIT_PRINTER. . . . . . . .    ----   -----          318
+A51 MACRO ASSEMBLER  COMMUNICATION2                                                       09/08/2018 12:59:15 PAGE    22
+
+ERRORUNIT_SEAL . . . . . . . . .    ----   -----          319
+ERRORUNIT_UART . . . . . . . . .    ----   -----          321
+ERRORUNIT_USB. . . . . . . . . .    ----   -----          322
+ERRORUNIT_VCOVERMOTOR. . . . . .    ----   -----          316
+EU14PCAA . . . . . . . . . . . .    ----   -----          108
+EU15PCAA . . . . . . . . . . . .    ----   -----          133
+EUART. . . . . . . . . . . . . .    ----   -----          52 422
+EUSBCOMMAND. . . . . . . . . . .    ----   -----          293 398
+EUSBTXINDEX. . . . . . . . . . .    ----   -----          148
+EVACUUMTYPE. . . . . . . . . . .    ----   -----          300 385
+FORWARDNUMBER. . . . . . . . . .    ----   -----          387
+HEATERPWM. . . . . . . . . . . .    ----   -----          391
+HOUR . . . . . . . . . . . . . .    ----   -----          349
+ID . . . . . . . . . . . . . . .    ----   -----          365
+IMAGENUMBER. . . . . . . . . . .    ----   -----          378
+INITTEMPTIME . . . . . . . . . .    ----   -----          382
+INT. . . . . . . . . . . . . . .    ----   -----          2
+ISAUTOCUT. . . . . . . . . . . .    ----   -----          410
+ISPRINTNUMBER. . . . . . . . . .    ----   -----          411
+ISSHAKE. . . . . . . . . . . . .    ----   -----          405
+KEY_0. . . . . . . . . . . . . .    ----   -----          72
+KEY_1. . . . . . . . . . . . . .    ----   -----          73
+KEY_2. . . . . . . . . . . . . .    ----   -----          74
+KEY_3. . . . . . . . . . . . . .    ----   -----          75
+KEY_4. . . . . . . . . . . . . .    ----   -----          76
+KEY_5. . . . . . . . . . . . . .    ----   -----          77
+KEY_6. . . . . . . . . . . . . .    ----   -----          78
+KEY_7. . . . . . . . . . . . . .    ----   -----          79
+KEY_8. . . . . . . . . . . . . .    ----   -----          80
+KEY_9. . . . . . . . . . . . . .    ----   -----          81
+KEY_DEL. . . . . . . . . . . . .    ----   -----          69
+KEY_DOWN . . . . . . . . . . . .    ----   -----          68
+KEY_ENTER. . . . . . . . . . . .    ----   -----          61
+KEY_ESC. . . . . . . . . . . . .    ----   -----          64
+KEY_FUNCTION . . . . . . . . . .    ----   -----          60
+KEY_IDEL . . . . . . . . . . . .    ----   -----          58
+KEY_LEFT . . . . . . . . . . . .    ----   -----          66
+KEY_PGDOWN . . . . . . . . . . .    ----   -----          63
+KEY_PGUP . . . . . . . . . . . .    ----   -----          62
+KEY_PRINT. . . . . . . . . . . .    ----   -----          59
+KEY_RIGHT. . . . . . . . . . . .    ----   -----          65
+KEY_START. . . . . . . . . . . .    ----   -----          71
+KEY_STOP . . . . . . . . . . . .    ----   -----          70
+KEY_UP . . . . . . . . . . . . .    ----   -----          67
+LEFT . . . . . . . . . . . . . .    ----   -----          415
+LENGTH . . . . . . . . . . . . .    ----   -----          417
+MESSAGE. . . . . . . . . . . . .    ----   -----          393
+MESSAGE_CARBONENTRYALERM . . . .    ----   -----          26
+MESSAGE_CLEARING . . . . . . . .    ----   -----          17
+MESSAGE_HEATING. . . . . . . . .    ----   -----          11
+MESSAGE_PACKCANCEL . . . . . . .    ----   -----          20
+MESSAGE_PACKDRUG . . . . . . . .    ----   -----          14
+MESSAGE_PACKFINISH . . . . . . .    ----   -----          18
+MESSAGE_PACKMIX. . . . . . . . .    ----   -----          15
+MESSAGE_PACKPAUSE. . . . . . . .    ----   -----          19
+MESSAGE_PACKPOWDER . . . . . . .    ----   -----          13
+MESSAGE_PACKSPACE. . . . . . . .    ----   -----          16
+MESSAGE_PAPERENTRYALERM. . . . .    ----   -----          25
+MESSAGE_POWDERLOCATING . . . . .    ----   -----          12
+MESSAGE_POWDERLOCATIONALERM. . .    ----   -----          24
+MESSAGE_SPACE. . . . . . . . . .    ----   -----          22
+MESSAGE_SYSTEMREADY. . . . . . .    ----   -----          21
+MINUTE . . . . . . . . . . . . .    ----   -----          350
+MONTH. . . . . . . . . . . . . .    ----   -----          347 408
+NOWNUMBER. . . . . . . . . . . .    ----   -----          375
+PACKNUMBER . . . . . . . . . . .    ----   -----          401
+A51 MACRO ASSEMBLER  COMMUNICATION2                                                       09/08/2018 12:59:15 PAGE    23
+
+PACKTYPE . . . . . . . . . . . .    ----   -----          358 399
+PACKTYPE_CONNECTION. . . . . . .    ----   -----          181
+PACKTYPE_DRUG. . . . . . . . . .    ----   -----          178
+PACKTYPE_DRUG0 . . . . . . . . .    ----   -----          182
+PACKTYPE_DRUG1 . . . . . . . . .    ----   -----          183
+PACKTYPE_DRUG2 . . . . . . . . .    ----   -----          184
+PACKTYPE_DRUG3 . . . . . . . . .    ----   -----          185
+PACKTYPE_MIX . . . . . . . . . .    ----   -----          179
+PACKTYPE_POWDER. . . . . . . . .    ----   -----          177
+PACKTYPE_SPACE . . . . . . . . .    ----   -----          180
+PGMODE . . . . . . . . . . . . .    ----   -----          404 426
+POWDERCOVEROPENNUMBER. . . . . .    ----   -----          389
+POWDERLOCATION . . . . . . . . .    ----   -----          376
+POWDERSTARTPOSITION. . . . . . .    ----   -----          380
+PRINTITEM. . . . . . . . . . . .    ----   -----          363
+PRINTITEMNUMBER. . . . . . . . .    ----   -----          364
+PRINTTOTALNUMBER . . . . . . . .    ----   -----          361
+REVERSENUMBER. . . . . . . . . .    ----   -----          388
+RIGHT. . . . . . . . . . . . . .    ----   -----          416
+SEC. . . . . . . . . . . . . . .    ----   -----          351
+SHAKEARRAY . . . . . . . . . . .    ----   -----          383
+SPACENUMBER. . . . . . . . . . .    ----   -----          359 400
+SPACEPG. . . . . . . . . . . . .    ----   -----          418
+STARTNUMBER. . . . . . . . . . .    ----   -----          402
+STATE. . . . . . . . . . . . . .    ----   -----          357 373
+STRUCT . . . . . . . . . . . . .    ----   -----          343 354 369 396 413 420
+TCPU0. . . . . . . . . . . . . .    ----   -----          367 423
+TCPU1. . . . . . . . . . . . . .    ----   -----          394 424
+TDATETIME. . . . . . . . . . . .    ----   -----          352 366
+THERMOMETER. . . . . . . . . . .    ----   -----          377
+TOTALNUMBER. . . . . . . . . . .    ----   -----          360 403
+TPACKER. . . . . . . . . . . . .    ----   -----          427
+TSIZE. . . . . . . . . . . . . .    ----   -----          419 426
+TUSB . . . . . . . . . . . . . .    ----   -----          412
+TWORD. . . . . . . . . . . . . .    ----   -----          7 380 381 382 383 387 388
+TYPEDEF. . . . . . . . . . . . .    ----   -----          1 2 3 9 30 48 56 136 150 175 189 198 208 223 256 281 295
+                                                         302 310 330 343 354 369 396 413 420
+U14PC_CARBONSTART. . . . . . . .    ----   -----          89
+U14PC_CARBONSTOP . . . . . . . .    ----   -----          88
+U14PC_DRUGCOVERSTART . . . . . .    ----   -----          95
+U14PC_DRUGCOVERSTOP. . . . . . .    ----   -----          94
+U14PC_DRUGLEFT . . . . . . . . .    ----   -----          104
+U14PC_DRUGRIGHT. . . . . . . . .    ----   -----          103
+U14PC_DRUGSTART. . . . . . . . .    ----   -----          106
+U14PC_DRUGSTOP . . . . . . . . .    ----   -----          105
+U14PC_POWDERCOVERSTART . . . . .    ----   -----          92
+U14PC_POWDERCOVERSTOP. . . . . .    ----   -----          91
+U14PC_POWDERLEFT . . . . . . . .    ----   -----          100
+U14PC_POWDERRIGHT. . . . . . . .    ----   -----          99
+U14PC_POWDERSTART. . . . . . . .    ----   -----          102
+U14PC_POWDERSTOP . . . . . . . .    ----   -----          101
+U14PC_PRESURESTART . . . . . . .    ----   -----          98
+U14PC_PRESURESTOP. . . . . . . .    ----   -----          97
+U15PC. . . . . . . . . . . . . .    ----   -----          110
+U15PC_CARBONOFF. . . . . . . . .    ----   -----          129
+U15PC_CARBONON . . . . . . . . .    ----   -----          128
+U15PC_HEATERCONTROLH . . . . . .    ----   -----          117
+U15PC_HEATERCONTROLL . . . . . .    ----   -----          116
+U15PC_PAPERCCW . . . . . . . . .    ----   -----          122
+U15PC_PAPERCKH . . . . . . . . .    ----   -----          121
+U15PC_PAPERCKL . . . . . . . . .    ----   -----          120
+U15PC_PAPERCW. . . . . . . . . .    ----   -----          123
+U15PC_PAPERDISABLE . . . . . . .    ----   -----          126
+U15PC_PAPERENABLE. . . . . . . .    ----   -----          127
+U15PC_PAPERPRESSOFF. . . . . . .    ----   -----          131
+U15PC_PAPERPRESSON . . . . . . .    ----   -----          130
+A51 MACRO ASSEMBLER  COMMUNICATION2                                                       09/08/2018 12:59:15 PAGE    24
+
+U15PC_PAPERRESETH. . . . . . . .    ----   -----          125
+U15PC_PAPERRESETL. . . . . . . .    ----   -----          124
+U15PC_SHARKEROFF . . . . . . . .    ----   -----          118
+U15PC_SHARKERON. . . . . . . . .    ----   -----          119
+U15PC_VACUUMHIGHSPEEDOFF . . . .    ----   -----          113
+U15PC_VACUUMHIGHSPEEDON. . . . .    ----   -----          112
+U15PC_VACUUMLOWSPEEDOFF. . . . .    ----   -----          115
+U15PC_VACUUMLOWSPEEDON . . . . .    ----   -----          114
+UART_MARK. . . . . . . . . . . .    ----   -----          51 422
+UART_NOMARK. . . . . . . . . . .    ----   -----          50
+UNION. . . . . . . . . . . . . .    ----   -----          3
+UNSIGNED . . . . . . . . . . . .    ----   -----          1 2
+USBCOMMAND_BUSY. . . . . . . . .    ----   -----          284
+USBCOMMAND_DRUGSREADY. . . . . .    ----   -----          292
+USBCOMMAND_IDEL. . . . . . . . .    ----   -----          283
+USBCOMMAND_MEMROYWRITE . . . . .    ----   -----          285
+USBCOMMAND_SHOWCARBONENTRY . . .    ----   -----          287
+USBCOMMAND_SHOWCARBONNOENTRY . .    ----   -----          288
+USBCOMMAND_SHOWPACKCONTINUE. . .    ----   -----          290
+USBCOMMAND_SHOWPACKPAUSE . . . .    ----   -----          289
+USBCOMMAND_SHOWPACKSTOP. . . . .    ----   -----          291
+USBCOMMAND_SHOWPAPERENTRY. . . .    ----   -----          286
+USBRXINDEX . . . . . . . . . . .    ----   -----          172
+USBRXINDEX_CPU1COMMAND . . . . .    ----   -----          153
+USBRXINDEX_DATA. . . . . . . . .    ----   -----          161
+USBRXINDEX_DAY . . . . . . . . .    ----   -----          168
+USBRXINDEX_HADDR . . . . . . . .    ----   -----          159
+USBRXINDEX_ISAUTOFILL. . . . . .    ----   -----          157
+USBRXINDEX_ISPRINTDATE . . . . .    ----   -----          169
+USBRXINDEX_ISPRINTNUMBER . . . .    ----   -----          170
+USBRXINDEX_ISSHAKE . . . . . . .    ----   -----          158
+USBRXINDEX_LADDR . . . . . . . .    ----   -----          160
+USBRXINDEX_MARK. . . . . . . . .    ----   -----          152
+USBRXINDEX_MONTH . . . . . . . .    ----   -----          167
+USBRXINDEX_PACKNUMBER. . . . . .    ----   -----          163
+USBRXINDEX_PACKTYPE. . . . . . .    ----   -----          154
+USBRXINDEX_SPACENUMBER . . . . .    ----   -----          156
+USBRXINDEX_STARTNUMBER . . . . .    ----   -----          164
+USBRXINDEX_TOTALNUMBER . . . . .    ----   -----          155
+USBRXINDEX_YEAR. . . . . . . . .    ----   -----          166
+USBTXINDEX_COMMAND . . . . . . .    ----   -----          139
+USBTXINDEX_COUNTER . . . . . . .    ----   -----          146
+USBTXINDEX_CPU0STATE . . . . . .    ----   -----          147
+USBTXINDEX_CPU1STATE . . . . . .    ----   -----          140
+USBTXINDEX_ERRORCODE . . . . . .    ----   -----          145
+USBTXINDEX_IMAGENUMBER . . . . .    ----   -----          144
+USBTXINDEX_MARK. . . . . . . . .    ----   -----          138
+USBTXINDEX_NOWNUMBER . . . . . .    ----   -----          141
+USBTXINDEX_POWDERLOCATION. . . .    ----   -----          142
+USBTXINDEX_THERMOMETER . . . . .    ----   -----          143
+VACUUMTYPE . . . . . . . . . . .    ----   -----          385
+VACUUMTYPE_HIGHSPEED . . . . . .    ----   -----          298
+VACUUMTYPE_LOWSPEED. . . . . . .    ----   -----          299
+VACUUMTYPE_STOP. . . . . . . . .    ----   -----          297
+W. . . . . . . . . . . . . . . .    ----   -----          5
+WORD . . . . . . . . . . . . . .    ----   -----          2 5 415 416 417
+YEAR . . . . . . . . . . . . . .    ----   -----          345 407
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  1 WARNING(S), 377 ERROR(S)

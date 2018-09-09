@@ -1,0 +1,183 @@
+#define IsPowderOnly  1//0:西醫    1:中醫
+
+#define IsCuterOk 0 //0沒剪刀 1有剪刀
+#define Time_USB				0xF000
+#define Time_DrugLSW			0xF000  // 0xF000
+
+#define Time_DrugRSW			0xF000  // 0xF000
+#define Time_DrugLeaveRSW		0x0400	// 0x0400
+
+#define Time_PowderLSW			0xF000  // 0xF000
+#define Time_PowderRSW			0xF000  // 0xF000
+
+#define Time_PaperMotorPS		0x1000  // 0x1000
+#define Time_PresurePS			0x5000
+
+#define Time_DrugCoverPS		0x8000	// 0x5000
+#define Time_PowderCoverPS		0x8000  // 0x5000
+
+#define Time_DrugCounterPS		0x1000
+#define Time_PowderCounterPS	0x1000
+
+
+#define Time_PowderFG_Counter 	0x8000
+#define Time_DrugerFG_Counter 	0x0150
+
+#define Time_PSDelay			100
+#define Time_PaperMotorDelay 	800		
+#define Time_FiveStepDelay 		700		
+#define Time_PrinterDelay 		180	
+void _One(unsigned char Type,bit IsPrint);
+void Cuter(void);
+void CloseLeave();
+void Powder(unsigned char type,unsigned char pwm);
+void CheckPauseState(bit IsPrint);
+void Vacuum();
+void AccessUSB( EUSBCommand Command);
+void cursor();
+void Init8255();
+void PaperMotorForward();
+void PaperMotorReverse();
+void AutoClear();
+void PowderToLeft();
+void Init_Device(void);
+void T0_Wait_ms (unsigned char ms);
+void Delay(unsigned int i);
+void Print(unsigned int Lineun,signed int PrintItemNo);
+void ClosePrinter();
+void HeadWithoutPrint();
+void ShowPackType();
+void HeadWithPrint();
+void ParameteInitial();
+void ParameterWrite();
+void USBPacking();
+void USBPack(unsigned char Type ,unsigned int Number ,unsigned char Total);
+unsigned int ADCConvert();
+void ZoomIn(unsigned char cData,unsigned char s[]);
+void putchar(unsigned char cData);
+void CPU1Error(unsigned char unit,unsigned char Type);
+void PackForUSB();
+void CPU0SetParamete();
+void Carbon(bit bSW);
+void PowderCoverOpen();
+void DrugCoverOpen();
+void PersuerDown();
+void PaperMotorLocate();
+void DrugToRight();
+void OnePack(unsigned char Type,bit IsPrint,bit IsCut);
+void Packing();
+void Shake(unsigned int n);
+void DrugLeaveRSW();
+void MemoryClear();
+void PackWithoutPrint();
+void CheckMotorState(unsigned char mask);
+void FiveStep();
+void SetSDA();
+unsigned char Cpu1Command();
+void Cpu1CommandIdel();
+void PackWithPrint();
+void error(unsigned char e);
+unsigned char getchar();
+void Item(unsigned char ItemNo);
+void MemoryWithPrint();
+void Shake(unsigned int stepNumber);
+void EMode();
+void DrugPack(unsigned char Mode);
+void AccessCpu0(ECpu0Command Command);
+void GetCPU2State();
+void TxBuffer(unsigned char CMD,unsigned char beginAddr,unsigned char endAddr);
+void CheckPackState();
+void SE_Delay(unsigned char i);
+void i_Delay(unsigned long i);
+void PresureDown();
+void PresureUp();
+void OneStep(unsigned int time);
+void InitSteppingMotor();
+void TPHControl();
+void DisableAllDriver();
+void PowderLocate();
+void PowderNumber();
+unsigned char SMBUS_ByteRead(unsigned char Target,unsigned char HighAddr,unsigned char LowAddr);
+void CPU2Command(unsigned char dat);
+void USBPrint(unsigned int Line);
+void CPU2Data(unsigned char HighAddr,unsigned char LowAddr, unsigned char dat);
+void EEPROM_ByteWrite(unsigned char bank,unsigned char HighAddr,unsigned char LowAddr, unsigned char dat);
+//-----------------------------------------------------------------------------
+void FLASH_ByteWrite (unsigned int addr,unsigned char byte);
+unsigned char FLASH_ByteRead (unsigned int addr);
+void FLASH_PageErase (unsigned int addr);
+void CheckErrorCode(EErrorCode ECode);
+void ClosePrinter();
+void init();
+
+
+//-----------------------------------------------------------------------------
+// Global CONSTANTS
+//-----------------------------------------------------------------------------
+
+       
+#define EEPROM0    	0xA0 
+#define EEPROM1    	0xA8 
+#define CPU2       	0xC2
+
+
+#define PrintTrue	1
+#define PrintFalse	0
+#define IsDebug 0
+
+#define PowderPWM	0x60
+#define TempPWM_MaxPower 	0xF0
+#define TempPWM_Standby		0x58
+#define TempPWM_Packing		0x60
+#define TempPWM_OFF			0x58
+
+#define MotorStop 		1
+#define MotorRight		2
+#define MotorLeft		3
+
+
+#define LeftSW			 0
+#define CursorLeftEntry  1
+#define CursorLeftHall   2
+#define CursorRightHall  3
+#define CursorRightEntry 4
+#define RightSW			 5
+//-----------------------------------------------------------------------------
+
+extern xdata unsigned char mem[520][55] ;	
+
+extern xdata unsigned char u14pa;
+extern xdata unsigned char u14pb;
+extern xdata unsigned char u14pc;
+extern xdata unsigned char u14	;
+extern xdata unsigned char u15pa;
+extern xdata unsigned char u15pb;
+extern xdata unsigned char u15pc;
+extern xdata unsigned char u15;
+extern xdata TPacker Packer ;
+extern idata unsigned char USBTxBuff[16] ;	
+
+sbit _INT_THERMISTOR	= P0 ^0;
+sbit _SCK		= P0 ^1;
+sbit _MISO		= P0 ^2;
+sbit _MOSI		= P0 ^3;
+
+sbit _ADC 		= P0 ^4;         
+sbit _SDA 		= P0 ^5;         
+sbit _SCL 		= P0 ^6;         
+sbit _PCAPOWDER	= P0 ^7;
+
+sbit _PCADRUG	= P1 ^0;
+sbit _PCACARBON	= P1 ^1;
+sbit _TX1		= P1 ^2;
+sbit _RX1		= P1 ^3;
+
+sbit _RESET   	= P1 ^5;
+
+sbit _RD   		= P1 ^6;
+sbit _WR   		= P1 ^7;
+
+sbit _A1       =  P3 ^1;
+sbit _A0       =  P3 ^0;
+
+sfr16 ADC0 = 0xBD;

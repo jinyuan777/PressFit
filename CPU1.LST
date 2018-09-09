@@ -1,0 +1,615 @@
+A51 MACRO ASSEMBLER  CPU1                                                                 09/08/2018 12:59:16 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.02b
+NO OBJECT MODULE REQUESTED
+ASSEMBLER INVOKED BY: C:\Keil\C51\BIN\A51.EXE CPU1.h XR GEN DB EP NOMOD51 INCDIR(c:\SiLabs\MCU\Inc) 
+
+LOC  OBJ            LINE     SOURCE
+
+                       1     
+                       2     
+                       3     
+                       4     
+                       5     
+                       6     
+                       7     
+                       8     
+                       9     
+                      10     
+                      11     
+                      12     
+                      13     
+                      14     
+                      15     
+                      16     
+                      17     
+                      18     
+                      19     
+                      20     
+                      21     
+                      22     
+                      23     
+                      24     
+                      25     
+                      26     
+                      27     
+                      28     
+                      29     
+                      30     void _One(unsigned char Type,bit IsPrint);
+*** _________________________^
+*** ERROR #A9 IN 30 (CPU1.h, LINE 30): SYNTAX ERROR
+                      31     void Cuter(void);
+*** _________________________^
+*** ERROR #A9 IN 31 (CPU1.h, LINE 31): SYNTAX ERROR
+                      32     void CloseLeave();
+*** _________________________^
+*** ERROR #A9 IN 32 (CPU1.h, LINE 32): SYNTAX ERROR
+                      33     void Powder(unsigned char type,unsigned char pwm);
+*** _________________________^
+*** ERROR #A9 IN 33 (CPU1.h, LINE 33): SYNTAX ERROR
+                      34     void CheckPauseState(bit IsPrint);
+*** _________________________^
+*** ERROR #A9 IN 34 (CPU1.h, LINE 34): SYNTAX ERROR
+                      35     void Vacuum();
+*** _________________________^
+*** ERROR #A9 IN 35 (CPU1.h, LINE 35): SYNTAX ERROR
+                      36     void AccessUSB( EUSBCommand Command);
+*** _________________________^
+*** ERROR #A9 IN 36 (CPU1.h, LINE 36): SYNTAX ERROR
+                      37     void cursor();
+*** _________________________^
+*** ERROR #A9 IN 37 (CPU1.h, LINE 37): SYNTAX ERROR
+                      38     void Init8255();
+*** _________________________^
+*** ERROR #A9 IN 38 (CPU1.h, LINE 38): SYNTAX ERROR
+                      39     void PaperMotorForward();
+*** _________________________^
+A51 MACRO ASSEMBLER  CPU1                                                                 09/08/2018 12:59:16 PAGE     2
+
+*** ERROR #A9 IN 39 (CPU1.h, LINE 39): SYNTAX ERROR
+                      40     void PaperMotorReverse();
+*** _________________________^
+*** ERROR #A9 IN 40 (CPU1.h, LINE 40): SYNTAX ERROR
+                      41     void AutoClear();
+*** _________________________^
+*** ERROR #A9 IN 41 (CPU1.h, LINE 41): SYNTAX ERROR
+                      42     void PowderToLeft();
+*** _________________________^
+*** ERROR #A9 IN 42 (CPU1.h, LINE 42): SYNTAX ERROR
+                      43     void Init_Device(void);
+*** _________________________^
+*** ERROR #A9 IN 43 (CPU1.h, LINE 43): SYNTAX ERROR
+                      44     void T0_Wait_ms (unsigned char ms);
+*** _________________________^
+*** ERROR #A9 IN 44 (CPU1.h, LINE 44): SYNTAX ERROR
+                      45     void Delay(unsigned int i);
+*** _________________________^
+*** ERROR #A9 IN 45 (CPU1.h, LINE 45): SYNTAX ERROR
+                      46     void Print(unsigned int Lineun,signed int PrintItemNo);
+*** _________________________^
+*** ERROR #A9 IN 46 (CPU1.h, LINE 46): SYNTAX ERROR
+                      47     void ClosePrinter();
+*** _________________________^
+*** ERROR #A9 IN 47 (CPU1.h, LINE 47): SYNTAX ERROR
+                      48     void HeadWithoutPrint();
+*** _________________________^
+*** ERROR #A9 IN 48 (CPU1.h, LINE 48): SYNTAX ERROR
+                      49     void ShowPackType();
+*** _________________________^
+*** ERROR #A9 IN 49 (CPU1.h, LINE 49): SYNTAX ERROR
+                      50     void HeadWithPrint();
+*** _________________________^
+*** ERROR #A9 IN 50 (CPU1.h, LINE 50): SYNTAX ERROR
+                      51     void ParameteInitial();
+*** _________________________^
+*** ERROR #A9 IN 51 (CPU1.h, LINE 51): SYNTAX ERROR
+                      52     void ParameterWrite();
+*** _________________________^
+*** ERROR #A9 IN 52 (CPU1.h, LINE 52): SYNTAX ERROR
+                      53     void USBPacking();
+*** _________________________^
+*** ERROR #A9 IN 53 (CPU1.h, LINE 53): SYNTAX ERROR
+                      54     void USBPack(unsigned char Type ,unsigned int Number ,unsigned char Total);
+*** _________________________^
+*** ERROR #A9 IN 54 (CPU1.h, LINE 54): SYNTAX ERROR
+                      55     unsigned int ADCConvert();
+*** _________________________^
+*** ERROR #A9 IN 55 (CPU1.h, LINE 55): SYNTAX ERROR
+                      56     void ZoomIn(unsigned char cData,unsigned char s[]);
+*** _________________________^
+*** ________________________________________________________________________^
+*** _________________________________________________________________________^
+*** ERROR #A9 IN 56 (CPU1.h, LINE 56): SYNTAX ERROR
+*** ERROR #A3 IN 56 (CPU1.h, LINE 56): ILLEGAL CHARACTER
+*** ERROR #A3 IN 56 (CPU1.h, LINE 56): ILLEGAL CHARACTER
+                      57     void putchar(unsigned char cData);
+*** _________________________^
+*** ERROR #A9 IN 57 (CPU1.h, LINE 57): SYNTAX ERROR
+                      58     void CPU1Error(unsigned char unit,unsigned char Type);
+*** _________________________^
+*** ERROR #A9 IN 58 (CPU1.h, LINE 58): SYNTAX ERROR
+                      59     void PackForUSB();
+*** _________________________^
+*** ERROR #A9 IN 59 (CPU1.h, LINE 59): SYNTAX ERROR
+                      60     void CPU0SetParamete();
+A51 MACRO ASSEMBLER  CPU1                                                                 09/08/2018 12:59:16 PAGE     3
+
+*** _________________________^
+*** ERROR #A9 IN 60 (CPU1.h, LINE 60): SYNTAX ERROR
+                      61     void Carbon(bit bSW);
+*** _________________________^
+*** ERROR #A9 IN 61 (CPU1.h, LINE 61): SYNTAX ERROR
+                      62     void PowderCoverOpen();
+*** _________________________^
+*** ERROR #A9 IN 62 (CPU1.h, LINE 62): SYNTAX ERROR
+                      63     void DrugCoverOpen();
+*** _________________________^
+*** ERROR #A9 IN 63 (CPU1.h, LINE 63): SYNTAX ERROR
+                      64     void PersuerDown();
+*** _________________________^
+*** ERROR #A9 IN 64 (CPU1.h, LINE 64): SYNTAX ERROR
+                      65     void PaperMotorLocate();
+*** _________________________^
+*** ERROR #A9 IN 65 (CPU1.h, LINE 65): SYNTAX ERROR
+                      66     void DrugToRight();
+*** _________________________^
+*** ERROR #A9 IN 66 (CPU1.h, LINE 66): SYNTAX ERROR
+                      67     void OnePack(unsigned char Type,bit IsPrint,bit IsCut);
+*** _________________________^
+*** ERROR #A9 IN 67 (CPU1.h, LINE 67): SYNTAX ERROR
+                      68     void Packing();
+*** _________________________^
+*** ERROR #A9 IN 68 (CPU1.h, LINE 68): SYNTAX ERROR
+                      69     void Shake(unsigned int n);
+*** _________________________^
+*** ERROR #A9 IN 69 (CPU1.h, LINE 69): SYNTAX ERROR
+                      70     void DrugLeaveRSW();
+*** _________________________^
+*** ERROR #A9 IN 70 (CPU1.h, LINE 70): SYNTAX ERROR
+                      71     void MemoryClear();
+*** _________________________^
+*** ERROR #A9 IN 71 (CPU1.h, LINE 71): SYNTAX ERROR
+                      72     void PackWithoutPrint();
+*** _________________________^
+*** ERROR #A9 IN 72 (CPU1.h, LINE 72): SYNTAX ERROR
+                      73     void CheckMotorState(unsigned char mask);
+*** _________________________^
+*** ERROR #A9 IN 73 (CPU1.h, LINE 73): SYNTAX ERROR
+                      74     void FiveStep();
+*** _________________________^
+*** ERROR #A9 IN 74 (CPU1.h, LINE 74): SYNTAX ERROR
+                      75     void SetSDA();
+*** _________________________^
+*** ERROR #A9 IN 75 (CPU1.h, LINE 75): SYNTAX ERROR
+                      76     unsigned char Cpu1Command();
+*** _________________________^
+*** ERROR #A9 IN 76 (CPU1.h, LINE 76): SYNTAX ERROR
+                      77     void Cpu1CommandIdel();
+*** _________________________^
+*** ERROR #A9 IN 77 (CPU1.h, LINE 77): SYNTAX ERROR
+                      78     void PackWithPrint();
+*** _________________________^
+*** ERROR #A9 IN 78 (CPU1.h, LINE 78): SYNTAX ERROR
+                      79     void error(unsigned char e);
+*** _________________________^
+*** ERROR #A9 IN 79 (CPU1.h, LINE 79): SYNTAX ERROR
+                      80     unsigned char getchar();
+*** _________________________^
+*** ERROR #A9 IN 80 (CPU1.h, LINE 80): SYNTAX ERROR
+                      81     void Item(unsigned char ItemNo);
+*** _________________________^
+*** ERROR #A9 IN 81 (CPU1.h, LINE 81): SYNTAX ERROR
+                      82     void MemoryWithPrint();
+A51 MACRO ASSEMBLER  CPU1                                                                 09/08/2018 12:59:16 PAGE     4
+
+*** _________________________^
+*** ERROR #A9 IN 82 (CPU1.h, LINE 82): SYNTAX ERROR
+                      83     void Shake(unsigned int stepNumber);
+*** _________________________^
+*** ERROR #A9 IN 83 (CPU1.h, LINE 83): SYNTAX ERROR
+                      84     void EMode();
+*** _________________________^
+*** ERROR #A9 IN 84 (CPU1.h, LINE 84): SYNTAX ERROR
+                      85     void DrugPack(unsigned char Mode);
+*** _________________________^
+*** ERROR #A9 IN 85 (CPU1.h, LINE 85): SYNTAX ERROR
+                      86     void AccessCpu0(ECpu0Command Command);
+*** _________________________^
+*** ERROR #A9 IN 86 (CPU1.h, LINE 86): SYNTAX ERROR
+                      87     void GetCPU2State();
+*** _________________________^
+*** ERROR #A9 IN 87 (CPU1.h, LINE 87): SYNTAX ERROR
+                      88     void TxBuffer(unsigned char CMD,unsigned char beginAddr,unsigned char endAddr);
+*** _________________________^
+*** ERROR #A9 IN 88 (CPU1.h, LINE 88): SYNTAX ERROR
+                      89     void CheckPackState();
+*** _________________________^
+*** ERROR #A9 IN 89 (CPU1.h, LINE 89): SYNTAX ERROR
+                      90     void SE_Delay(unsigned char i);
+*** _________________________^
+*** ERROR #A9 IN 90 (CPU1.h, LINE 90): SYNTAX ERROR
+                      91     void i_Delay(unsigned long i);
+*** _________________________^
+*** ERROR #A9 IN 91 (CPU1.h, LINE 91): SYNTAX ERROR
+                      92     void PresureDown();
+*** _________________________^
+*** ERROR #A9 IN 92 (CPU1.h, LINE 92): SYNTAX ERROR
+                      93     void PresureUp();
+*** _________________________^
+*** ERROR #A9 IN 93 (CPU1.h, LINE 93): SYNTAX ERROR
+                      94     void OneStep(unsigned int time);
+*** _________________________^
+*** ERROR #A9 IN 94 (CPU1.h, LINE 94): SYNTAX ERROR
+                      95     void InitSteppingMotor();
+*** _________________________^
+*** ERROR #A9 IN 95 (CPU1.h, LINE 95): SYNTAX ERROR
+                      96     void TPHControl();
+*** _________________________^
+*** ERROR #A9 IN 96 (CPU1.h, LINE 96): SYNTAX ERROR
+                      97     void DisableAllDriver();
+*** _________________________^
+*** ERROR #A9 IN 97 (CPU1.h, LINE 97): SYNTAX ERROR
+                      98     void PowderLocate();
+*** _________________________^
+*** ERROR #A9 IN 98 (CPU1.h, LINE 98): SYNTAX ERROR
+                      99     void PowderNumber();
+*** _________________________^
+*** ERROR #A9 IN 99 (CPU1.h, LINE 99): SYNTAX ERROR
+                     100     unsigned char SMBUS_ByteRead(unsigned char Target,unsigned char HighAddr,unsigned char LowAddr);
+*** _________________________^
+*** ERROR #A9 IN 100 (CPU1.h, LINE 100): SYNTAX ERROR
+                     101     void CPU2Command(unsigned char dat);
+*** _________________________^
+*** ERROR #A9 IN 101 (CPU1.h, LINE 101): SYNTAX ERROR
+                     102     void USBPrint(unsigned int Line);
+*** _________________________^
+*** ERROR #A9 IN 102 (CPU1.h, LINE 102): SYNTAX ERROR
+                     103     void CPU2Data(unsigned char HighAddr,unsigned char LowAddr, unsigned char dat);
+*** _________________________^
+*** ERROR #A9 IN 103 (CPU1.h, LINE 103): SYNTAX ERROR
+                     104     void EEPROM_ByteWrite(unsigned char bank,unsigned char HighAddr,unsigned char LowAddr, unsigned char dat);
+A51 MACRO ASSEMBLER  CPU1                                                                 09/08/2018 12:59:16 PAGE     5
+
+*** _________________________^
+*** ERROR #A9 IN 104 (CPU1.h, LINE 104): SYNTAX ERROR
+                     105     
+                     106     void FLASH_ByteWrite (unsigned int addr,unsigned char byte);
+*** _________________________^
+*** ERROR #A9 IN 106 (CPU1.h, LINE 106): SYNTAX ERROR
+                     107     unsigned char FLASH_ByteRead (unsigned int addr);
+*** _________________________^
+*** ERROR #A9 IN 107 (CPU1.h, LINE 107): SYNTAX ERROR
+                     108     void FLASH_PageErase (unsigned int addr);
+*** _________________________^
+*** ERROR #A9 IN 108 (CPU1.h, LINE 108): SYNTAX ERROR
+                     109     void CheckErrorCode(EErrorCode ECode);
+*** _________________________^
+*** ERROR #A9 IN 109 (CPU1.h, LINE 109): SYNTAX ERROR
+                     110     void ClosePrinter();
+*** _________________________^
+*** ERROR #A9 IN 110 (CPU1.h, LINE 110): SYNTAX ERROR
+                     111     void init();
+*** _________________________^
+*** ERROR #A9 IN 111 (CPU1.h, LINE 111): SYNTAX ERROR
+                     112     
+                     113     
+                     114     
+                     115     
+                     116     
+                     117     
+                     118            
+                     119     
+                     120     
+                     121     
+                     122     
+                     123     
+                     124     
+                     125     
+                     126     
+                     127     
+                     128     
+                     129     
+                     130     
+                     131     
+                     132     
+                     133     
+                     134     
+                     135     
+                     136     
+                     137     
+                     138     
+                     139     
+                     140     
+                     141     
+                     142     
+                     143     
+                     144     
+                     145     
+                     146     
+                     147     extern xdata unsigned char mem[520][55] ;       
+*** ______________________________________^
+*** _______________________________________________________^
+*** ___________________________________________________________^
+*** ____________________________________________________________^
+*** _______________________________________________________________^
+*** ERROR #A47 IN 147 (CPU1.h, LINE 147): XDATA-ADDRESS EXPECTED
+*** ERROR #A3 IN 147 (CPU1.h, LINE 147): ILLEGAL CHARACTER
+*** ERROR #A3 IN 147 (CPU1.h, LINE 147): ILLEGAL CHARACTER
+*** ERROR #A3 IN 147 (CPU1.h, LINE 147): ILLEGAL CHARACTER
+A51 MACRO ASSEMBLER  CPU1                                                                 09/08/2018 12:59:16 PAGE     6
+
+*** ERROR #A3 IN 147 (CPU1.h, LINE 147): ILLEGAL CHARACTER
+                     148     
+                     149     extern xdata unsigned char u14pa;
+*** ______________________________________^
+*** ERROR #A47 IN 149 (CPU1.h, LINE 149): XDATA-ADDRESS EXPECTED
+                     150     extern xdata unsigned char u14pb;
+*** ______________________________________^
+*** ERROR #A47 IN 150 (CPU1.h, LINE 150): XDATA-ADDRESS EXPECTED
+                     151     extern xdata unsigned char u14pc;
+*** ______________________________________^
+*** ERROR #A47 IN 151 (CPU1.h, LINE 151): XDATA-ADDRESS EXPECTED
+                     152     extern xdata unsigned char u14  ;
+*** ______________________________________^
+*** ERROR #A47 IN 152 (CPU1.h, LINE 152): XDATA-ADDRESS EXPECTED
+                     153     extern xdata unsigned char u15pa;
+*** ______________________________________^
+*** ERROR #A47 IN 153 (CPU1.h, LINE 153): XDATA-ADDRESS EXPECTED
+                     154     extern xdata unsigned char u15pb;
+*** ______________________________________^
+*** ERROR #A47 IN 154 (CPU1.h, LINE 154): XDATA-ADDRESS EXPECTED
+                     155     extern xdata unsigned char u15pc;
+*** ______________________________________^
+*** ERROR #A47 IN 155 (CPU1.h, LINE 155): XDATA-ADDRESS EXPECTED
+                     156     extern xdata unsigned char u15;
+*** ______________________________________^
+*** ERROR #A47 IN 156 (CPU1.h, LINE 156): XDATA-ADDRESS EXPECTED
+                     157     extern xdata TPacker Packer ;
+*** ______________________________________^
+*** ERROR #A47 IN 157 (CPU1.h, LINE 157): XDATA-ADDRESS EXPECTED
+                     158     extern idata unsigned char USBTxBuff[16] ;      
+*** ______________________________________^
+*** _____________________________________________________________^
+*** ________________________________________________________________^
+*** ERROR #A49 IN 158 (CPU1.h, LINE 158): IDATA-ADDRESS EXPECTED
+*** ERROR #A3 IN 158 (CPU1.h, LINE 158): ILLEGAL CHARACTER
+*** ERROR #A3 IN 158 (CPU1.h, LINE 158): ILLEGAL CHARACTER
+                     159     
+                     160     sbit _INT_THERMISTOR    = P0 ^0;
+*** ___________________________________________________^
+*** ERROR #A17 IN 160 (CPU1.h, LINE 160): INVALID BYTE BASE IN BIT ADDRESS EXPRESSION
+                     161     sbit _SCK               = P0 ^1;
+*** ___________________________________________________^
+*** ERROR #A17 IN 161 (CPU1.h, LINE 161): INVALID BYTE BASE IN BIT ADDRESS EXPRESSION
+                     162     sbit _MISO              = P0 ^2;
+*** ___________________________________________________^
+*** ERROR #A17 IN 162 (CPU1.h, LINE 162): INVALID BYTE BASE IN BIT ADDRESS EXPRESSION
+                     163     sbit _MOSI              = P0 ^3;
+*** ___________________________________________________^
+*** ERROR #A17 IN 163 (CPU1.h, LINE 163): INVALID BYTE BASE IN BIT ADDRESS EXPRESSION
+                     164     
+                     165     sbit _ADC               = P0 ^4;         
+*** ___________________________________________________^
+*** ERROR #A17 IN 165 (CPU1.h, LINE 165): INVALID BYTE BASE IN BIT ADDRESS EXPRESSION
+                     166     sbit _SDA               = P0 ^5;         
+*** ___________________________________________________^
+*** ERROR #A17 IN 166 (CPU1.h, LINE 166): INVALID BYTE BASE IN BIT ADDRESS EXPRESSION
+                     167     sbit _SCL               = P0 ^6;         
+*** ___________________________________________________^
+*** ERROR #A17 IN 167 (CPU1.h, LINE 167): INVALID BYTE BASE IN BIT ADDRESS EXPRESSION
+                     168     sbit _PCAPOWDER = P0 ^7;
+*** ___________________________________________^
+*** ERROR #A17 IN 168 (CPU1.h, LINE 168): INVALID BYTE BASE IN BIT ADDRESS EXPRESSION
+                     169     
+                     170     sbit _PCADRUG   = P1 ^0;
+*** ___________________________________________^
+*** ERROR #A17 IN 170 (CPU1.h, LINE 170): INVALID BYTE BASE IN BIT ADDRESS EXPRESSION
+A51 MACRO ASSEMBLER  CPU1                                                                 09/08/2018 12:59:16 PAGE     7
+
+                     171     sbit _PCACARBON = P1 ^1;
+*** ___________________________________________^
+*** ERROR #A17 IN 171 (CPU1.h, LINE 171): INVALID BYTE BASE IN BIT ADDRESS EXPRESSION
+                     172     sbit _TX1               = P1 ^2;
+*** ___________________________________________________^
+*** ERROR #A17 IN 172 (CPU1.h, LINE 172): INVALID BYTE BASE IN BIT ADDRESS EXPRESSION
+                     173     sbit _RX1               = P1 ^3;
+*** ___________________________________________________^
+*** ERROR #A17 IN 173 (CPU1.h, LINE 173): INVALID BYTE BASE IN BIT ADDRESS EXPRESSION
+                     174     
+                     175     sbit _RESET     = P1 ^5;
+*** ___________________________________________^
+*** ERROR #A17 IN 175 (CPU1.h, LINE 175): INVALID BYTE BASE IN BIT ADDRESS EXPRESSION
+                     176     
+                     177     sbit _RD                = P1 ^6;
+*** ___________________________________________________^
+*** ERROR #A17 IN 177 (CPU1.h, LINE 177): INVALID BYTE BASE IN BIT ADDRESS EXPRESSION
+                     178     sbit _WR                = P1 ^7;
+*** ___________________________________________________^
+*** ERROR #A17 IN 178 (CPU1.h, LINE 178): INVALID BYTE BASE IN BIT ADDRESS EXPRESSION
+                     179     
+                     180     sbit _A1       =  P3 ^1;
+*** ___________________________________________^
+*** ERROR #A17 IN 180 (CPU1.h, LINE 180): INVALID BYTE BASE IN BIT ADDRESS EXPRESSION
+                     181     sbit _A0       =  P3 ^0;
+*** ___________________________________________^
+*** ERROR #A17 IN 181 (CPU1.h, LINE 181): INVALID BYTE BASE IN BIT ADDRESS EXPRESSION
+                     182     
+                     183     sfr16 ADC0 = 0xBD;
+*** WARNING #A41 IN 183 (CPU1.h, LINE 183): MISSING 'END' STATEMENT
+A51 MACRO ASSEMBLER  CPU1                                                                 09/08/2018 12:59:16 PAGE     8
+
+XREF SYMBOL TABLE LISTING
+---- ------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES / REFERENCES
+
+ACCESSCPU0 . . . .    ----   -----          86
+ACCESSUSB. . . . .    ----   -----          36
+ADCCONVERT . . . .    ----   -----          55
+ADDR . . . . . . .    ----   -----          106 107 108
+AUTOCLEAR. . . . .    ----   -----          41
+BANK . . . . . . .    ----   -----          104
+BEGINADDR. . . . .    ----   -----          88
+BSW. . . . . . . .    ----   -----          61
+BYTE . . . . . . .    ----   -----          106
+CARBON . . . . . .    ----   -----          61
+CDATA. . . . . . .    ----   -----          56 57
+CHAR . . . . . . .    ----   -----          30 33 44 54 56 57 58 67 73 76 79 80 81 85 88 90 100 101 103 104 106 107
+                                           147 149 150 151 152 153 154 155 156 158
+CHECKERRORCODE . .    ----   -----          109
+CHECKMOTORSTATE. .    ----   -----          73
+CHECKPACKSTATE . .    ----   -----          89
+CHECKPAUSESTATE. .    ----   -----          34
+CLOSELEAVE . . . .    ----   -----          32
+CLOSEPRINTER . . .    ----   -----          47 110
+CMD. . . . . . . .    ----   -----          88
+COMMAND. . . . . .    ----   -----          36 86
+CPU0SETPARAMETE. .    ----   -----          60
+CPU1COMMAND. . . .    ----   -----          76
+CPU1COMMANDIDEL. .    ----   -----          77
+CPU1ERROR. . . . .    ----   -----          58
+CPU2COMMAND. . . .    ----   -----          101
+CPU2DATA . . . . .    ----   -----          103
+CURSOR . . . . . .    ----   -----          37
+CUTER. . . . . . .    ----   -----          31
+DAT. . . . . . . .    ----   -----          101 103 104
+DELAY. . . . . . .    ----   -----          45
+DISABLEALLDRIVER .    ----   -----          97
+DRUGCOVEROPEN. . .    ----   -----          63
+DRUGLEAVERSW . . .    ----   -----          70
+DRUGPACK . . . . .    ----   -----          85
+DRUGTORIGHT. . . .    ----   -----          66
+E. . . . . . . . .    ----   -----          79
+ECODE. . . . . . .    ----   -----          109
+ECPU0COMMAND . . .    ----   -----          86
+EEPROM_BYTEWRITE .    ----   -----          104
+EERRORCODE . . . .    ----   -----          109
+EMODE. . . . . . .    ----   -----          84
+ENDADDR. . . . . .    ----   -----          88
+ERROR. . . . . . .    ----   -----          79
+EUSBCOMMAND. . . .    ----   -----          36
+EXTERN . . . . . .    ----   -----          147# 149# 150# 151# 152# 153# 154# 155# 156# 157# 158#
+FIVESTEP . . . . .    ----   -----          74
+FLASH_BYTEREAD . .    ----   -----          107
+FLASH_BYTEWRITE. .    ----   -----          106
+FLASH_PAGEERASE. .    ----   -----          108
+GETCHAR. . . . . .    ----   -----          80
+GETCPU2STATE . . .    ----   -----          87
+HEADWITHOUTPRINT .    ----   -----          48
+HEADWITHPRINT. . .    ----   -----          50
+HIGHADDR . . . . .    ----   -----          100 103 104
+I. . . . . . . . .    ----   -----          45 90 91
+INIT . . . . . . .    ----   -----          111
+INIT8255 . . . . .    ----   -----          38
+INITSTEPPINGMOTOR.    ----   -----          95
+INIT_DEVICE. . . .    ----   -----          43
+A51 MACRO ASSEMBLER  CPU1                                                                 09/08/2018 12:59:16 PAGE     9
+
+INT. . . . . . . .    ----   -----          45 46 54 55 69 83 94 102 106 107 108
+ISCUT. . . . . . .    ----   -----          67
+ISPRINT. . . . . .    ----   -----          30 34 67
+ITEM . . . . . . .    ----   -----          81
+ITEMNO . . . . . .    ----   -----          81
+I_DELAY. . . . . .    ----   -----          91
+LINE . . . . . . .    ----   -----          102
+LINEUN . . . . . .    ----   -----          46
+LONG . . . . . . .    ----   -----          91
+LOWADDR. . . . . .    ----   -----          100 103 104
+MASK . . . . . . .    ----   -----          73
+MEM. . . . . . . .    ----   -----          147
+MEMORYCLEAR. . . .    ----   -----          71
+MEMORYWITHPRINT. .    ----   -----          82
+MODE . . . . . . .    ----   -----          85
+MS . . . . . . . .    ----   -----          44
+N. . . . . . . . .    ----   -----          69
+ONEPACK. . . . . .    ----   -----          67
+ONESTEP. . . . . .    ----   -----          94
+P0 . . . . . . . .    ----   -----          160 161 162 163 165 166 167 168
+P1 . . . . . . . .    ----   -----          170 171 172 173 175 177 178
+P3 . . . . . . . .    ----   -----          180 181
+PACKER . . . . . .    ----   -----          157
+PACKFORUSB . . . .    ----   -----          59
+PACKING. . . . . .    ----   -----          68
+PACKWITHOUTPRINT .    ----   -----          72
+PACKWITHPRINT. . .    ----   -----          78
+PAPERMOTORFORWARD.    ----   -----          39
+PAPERMOTORLOCATE .    ----   -----          65
+PAPERMOTORREVERSE.    ----   -----          40
+PARAMETEINITIAL. .    ----   -----          51
+PARAMETERWRITE . .    ----   -----          52
+PERSUERDOWN. . . .    ----   -----          64
+POWDER . . . . . .    ----   -----          33
+POWDERCOVEROPEN. .    ----   -----          62
+POWDERLOCATE . . .    ----   -----          98
+POWDERNUMBER . . .    ----   -----          99
+POWDERTOLEFT . . .    ----   -----          42
+PRESUREDOWN. . . .    ----   -----          92
+PRESUREUP. . . . .    ----   -----          93
+PRINT. . . . . . .    ----   -----          46
+PRINTITEMNO. . . .    ----   -----          46
+PUTCHAR. . . . . .    ----   -----          57
+PWM. . . . . . . .    ----   -----          33
+S. . . . . . . . .    ----   -----          56
+SETSDA . . . . . .    ----   -----          75
+SE_DELAY . . . . .    ----   -----          90
+SHAKE. . . . . . .    ----   -----          69 83
+SHOWPACKTYPE . . .    ----   -----          49
+SIGNED . . . . . .    ----   -----          46
+SMBUS_BYTEREAD . .    ----   -----          100
+STEPNUMBER . . . .    ----   -----          83
+T0_WAIT_MS . . . .    ----   -----          44
+TARGET . . . . . .    ----   -----          100
+TIME . . . . . . .    ----   -----          94
+TOTAL. . . . . . .    ----   -----          54
+TPACKER. . . . . .    ----   -----          157
+TPHCONTROL . . . .    ----   -----          96
+TXBUFFER . . . . .    ----   -----          88
+TYPE . . . . . . .    ----   -----          30 33 54 58 67
+U14. . . . . . . .    ----   -----          152
+U14PA. . . . . . .    ----   -----          149
+U14PB. . . . . . .    ----   -----          150
+U14PC. . . . . . .    ----   -----          151
+U15. . . . . . . .    ----   -----          156
+U15PA. . . . . . .    ----   -----          153
+A51 MACRO ASSEMBLER  CPU1                                                                 09/08/2018 12:59:16 PAGE    10
+
+U15PB. . . . . . .    ----   -----          154
+U15PC. . . . . . .    ----   -----          155
+UNSIGNED . . . . .    ----   -----          30 33 44 45 46 54 55 56 57 58 67 69 73 76 79 80 81 83 85 88 90 91 94 100
+                                           101 102 103 104 106 107 108 147 149 150 151 152 153 154 155 156 158
+USBPACK. . . . . .    ----   -----          54
+USBPACKING . . . .    ----   -----          53
+USBPRINT . . . . .    ----   -----          102
+USBTXBUFF. . . . .    ----   -----          158
+VACUUM . . . . . .    ----   -----          35
+VOID . . . . . . .    ----   -----          30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53
+                                           54 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 77 78 79 81
+                                           82 83 84 85 86 87 88 89 90 91 92 93 94 95 96 97 98 99 101 102 103 104 106
+                                           108 109 110 111
+ZOOMIN . . . . . .    ----   -----          56
+_A0. . . . . . . .  B ADDR   0020H.0 A      181#
+_A1. . . . . . . .  B ADDR   0020H.1 A      180#
+_ADC . . . . . . .  B ADDR   0020H.4 A      165#
+_INT_THERMISTOR. .  B ADDR   0020H.0 A      160#
+_MISO. . . . . . .  B ADDR   0020H.2 A      162#
+_MOSI. . . . . . .  B ADDR   0020H.3 A      163#
+_ONE . . . . . . .    ----   -----          30
+_PCACARBON . . . .  B ADDR   0020H.1 A      171#
+_PCADRUG . . . . .  B ADDR   0020H.0 A      170#
+_PCAPOWDER . . . .  B ADDR   0020H.7 A      168#
+_RD. . . . . . . .  B ADDR   0020H.6 A      177#
+_RESET . . . . . .  B ADDR   0020H.5 A      175#
+_RX1 . . . . . . .  B ADDR   0020H.3 A      173#
+_SCK . . . . . . .  B ADDR   0020H.1 A      161#
+_SCL . . . . . . .  B ADDR   0020H.6 A      167#
+_SDA . . . . . . .  B ADDR   0020H.5 A      166#
+_TX1 . . . . . . .  B ADDR   0020H.2 A      172#
+_WR. . . . . . . .  B ADDR   0020H.7 A      178#
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  1 WARNING(S), 117 ERROR(S)
