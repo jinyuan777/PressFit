@@ -220,7 +220,8 @@ void USBPrint(unsigned int Line)
 }
 void USBPack(bit IsDrug,bit IsPrint)
 {
-	unsigned int Line,H;
+	unsigned int Line,H,d;
+    unsigned int MotorTime = 1400;
 	Delay(100);
 
 	if (! IsCancelPack)
@@ -235,32 +236,35 @@ void USBPack(bit IsDrug,bit IsPrint)
 			{
 				if(IsPrint)
 				{
-				USBPrint(Line);
-				if(Line == Packer.PgMode[USB.PgMode].Left)
-				{
-					Carbon(1);
-					u15pc |= 0x08;
-				}
-				if(Line == Packer.PgMode[USB.PgMode].Right)
-				{
-					u15pc &= 0xF7;
-					Carbon(0);	
-				}
+					if (Line == Packer.PgMode[USB.PgMode].Left - 55)
+					{
+						u14pb |= 0x40;				//印字頭上升
+						_u14pb(u14pb);
+						Delay(20);
+						Carbon(1);
+						Delay(10);
+					}
+					else if (Line == Packer.PgMode[USB.PgMode].Right)
+					{
+//						u14B = u14PC_PresureStop;	//不確定是否有功能需要測試
+						u14pb &= 0xBF;				//印字頭下降
+						_u14pb(u14pb);				//後來加上去確定有用
+						Delay(1000);				//原始20
+						Carbon(0);
+						Delay(10);
+					}			
+					USBPrint(Line);	
 				}
 				else
 				{
 					u15 = u15PC_PaperCKH;		
-					H = Time_FiveStepDelay;	while(H--);
+					d = MotorTime;	while(d--);
 					u15 = u15PC_PaperCKL;		
-					H = Time_FiveStepDelay;	while(H--);
-					u15 = u15PC_PaperCKH;		
-					H = Time_FiveStepDelay;	while(H--);
-					u15 = u15PC_PaperCKL;		
-					H = Time_FiveStepDelay;	while(H--);
-					u15 = u15PC_PaperCKH;		
-					H = Time_FiveStepDelay;	while(H--);
-					u15 = u15PC_PaperCKL;		
-					H = Time_FiveStepDelay;	while(H--);	
+					d = MotorTime;	while(d--);
+					if(Line < 200)
+						MotorTime --;
+					else if(Line > (Packer.PgMode[USB.PgMode].Length - 200))
+						MotorTime ++;
 				}
 			}
 	}	
@@ -545,19 +549,23 @@ void main()
 	Packer.PgMode[0].Right 	= 452;
 	Packer.PgMode[0].Length = 512;
 	Packer.PgMode[0].SpacePg = 4;*/
-	Packer.PgMode[0].Left 	= 20;
-	Packer.PgMode[0].Right 	= 540;
-	Packer.PgMode[0].Length = 576;
-	Packer.PgMode[0].SpacePg = 3;
+	Packer.PgMode[0].Left 	 = 120;
+	Packer.PgMode[0].Right 	 = 560;
+	Packer.PgMode[0].Length  = 585;	
+	Packer.PgMode[0].SpacePg = 4;
 
-	Packer.PgMode[1].Left 	= 60;
-	Packer.PgMode[1].Right 	= 580;
-	Packer.PgMode[1].Length = 640;
+	//9cm		
+	Packer.PgMode[1].Left  	 = 80; //60
+	Packer.PgMode[1].Right 	 = 600;//580
+	Packer.PgMode[1].Length  = 750;//750 8.7=720
 	Packer.PgMode[1].SpacePg = 3;
-	Packer.PgMode[2].Left 	= 180;
-	Packer.PgMode[2].Right 	= 700;
-	Packer.PgMode[2].Length = 853;
-	Packer.PgMode[2].SpacePg = 2;
+	
+	//10cm	
+	Packer.PgMode[2].Left 	 = 300;
+	Packer.PgMode[2].Right 	 = 820;//820
+	Packer.PgMode[2].Length  = 830;
+	Packer.PgMode[2].SpacePg = 3;
+	
 	USB.Command = USBCommand_Idel;
 
 	EA = 1;
@@ -2075,12 +2083,6 @@ void Timer0_ISR (void) interrupt 1
 			break;
 		case u15PC_PaperDisable:
 			u15pc |= 0x40;
-			break;
-		case u15PC_CarbonON:
-			u15pc &= 0xFB;
-			break;
-		case u15PC_CarbonOFF:
-			u15pc |= 0x04;
 			break;
 		case u15PC_PaperPressON:
 			u15pc &= 0xFD;
